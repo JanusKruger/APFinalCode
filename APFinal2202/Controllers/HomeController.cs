@@ -82,5 +82,11 @@ namespace APFinal2202.Controllers
 
             return View();
         }
+
+        public ActionResult Privacy()
+        {
+            ViewBag.Message = "Privacy Policy.";
+            return View();
+        }
     }
 }

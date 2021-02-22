@@ -30,22 +30,22 @@
     {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Title)
+                @Html.DisplayFor(modelItem => item.Title, new { @class = "white" }))
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Description)
+                @Html.DisplayFor(modelItem => item.Description, new { @class = "white" })
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.PropertyType)
+                @Html.DisplayFor(modelItem => item.PropertyType, new { @class = "white" })
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.OwnershipType)
+                @Html.DisplayFor(modelItem => item.OwnershipType, new { @class = "white" })
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.PropertyStatus)
+                @Html.DisplayFor(modelItem => item.PropertyStatus, new { @class = "white" })
             </td>
             <td>
-                @Html.ActionLink("Set Auction", "StartAuction","Auction", new { id = item.Id }, null)
+                @Html.ActionLink("Set Auction", "StartAuction", "Auction", new { id = item.Id }, new { @class = "white" })
             </td>
         </tr>
     }

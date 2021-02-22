@@ -19,10 +19,13 @@ namespace APFinal2202
                         "~/Scripts/modernizr-*"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
-                      "~/Scripts/bootstrap.js"));
+                      "~/Scripts/bootstrap.js",
+                      "~/Scripts/dateTimePicker/jquery.datetimepicker.full.js",
+                      "~/Scripts/dateTimePicker/jquery.datetimepicker.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
+                      "~/Content/dateTimePicker/jquery.datetimepicker.css",
                       "~/Content/site.css"));
         }
     }

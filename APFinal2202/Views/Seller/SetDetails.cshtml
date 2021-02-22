@@ -17,128 +17,110 @@
 }
 else
 {
-    <h1>@ViewBag.Title</h1>
-    <div class="container">
-        <div class="jumbotron">
-            <h3>This is <strong>@User.Identity.GetUserName()</strong> @ViewBag.Title details page</h3>
-        </div>
-        <ul class="nav nav-pills nav-justified" role="tablist" id="buyerDetails">
-            <li role="presentation" class="active ">
-                <a href="#details" aria-controls="details" role="tab" data-toggle="tab">Details</a>
-            </li>
-            <li role="presentation">
-                <a href="#address" aria-controls="address" role="tab" data-toggle="tab">Address</a>
-            </li>
-            <li role="presentation">
-                <a href="#avatar" aria-controls="avatar" role="tab" data-toggle="tab">Avatar</a>
-            </li>
-        </ul>
+    <div>
         @using (Html.BeginForm("SetDetails", "Seller", new { model = Model }, FormMethod.Post, new { @class = "form-horizontal", role = "form", enctype = "multipart/form-data" }))
         {
             @Html.AntiForgeryToken()
-            <div class="tab-content clearfix parent">
+            <div class="parent">
                 <br />
-                <div class="tab-pane active" id="details">
-                    <div class="col-md-12">
-                        <div class="row form-group">
-                            <div class="checkbox">
-                                <label>
-                                    @Html.CheckBoxFor(m => m.Signature, new { type = "checkbox" })
-                                    @Html.LabelFor(m => m.Signature)
-                                </label>
-                            </div>
-                            <div class="checkbox">
-                                <label>
-                                    @Html.CheckBoxFor(m => m.ApprovalStatus, new { type = "checkbox" })
-                                    @Html.LabelFor(m => m.ApprovalStatus)
-                                </label>
-                            </div>
+                <div class="col-md-4">
+                    <div class="row form-group">
+                        <div class="checkbox">
+                            <label>
+                                @Html.CheckBoxFor(m => m.Signature, new { type = "checkbox"})
+                                @Html.LabelFor(m => m.Signature, new { @class = "white" })
+                            </label>
                         </div>
-                        <div class="row form-group">
-                            @Html.LabelFor(m => m.SellerType, new { @class = "col-md-2 control-label" })
-                            <div class="col-md-8">
-                                @Html.DropDownListFor(m => m.SellerType, EnumHelper.GetSelectList(typeof(SellerType)), "Seller Type", new { @class = "form-control" })
-                                @Html.ValidationMessageFor(m => m.SellerType)
-                            </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="checkbox">
+                            <label>
+                                @Html.CheckBoxFor(m => m.ApprovalStatus, new { type = "checkbox" })
+                                @Html.LabelFor(m => m.ApprovalStatus, new { @class = "white" })
+                            </label>
                         </div>
-                        <div class="row form-group">
-                            @Html.LabelFor(m => m.NationalIdentificationNumber, new { @class = "col-md-2 control-label" })
-                            <div class="col-md-8">
-                                @Html.EditorFor(m => m.NationalIdentificationNumber, new { @class = "form-control" })
-                            </div>
+                    </div>
+                    <div class="row form-group">
+                        @Html.LabelFor(m => m.SellerType, new { @class = "col-md-4 control-label white" })
+                        <div class="col-md-8">
+                            @Html.DropDownListFor(m => m.SellerType, EnumHelper.GetSelectList(typeof(SellerType)), "Seller Type", new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.SellerType)
                         </div>
-                        <div class="row form-group">
-                            <div class="checkbox">
-                                <label>
-                                    @Html.CheckBoxFor(m => m.ReceiveNewsletter, new { type = "checkbox" })
-                                    @Html.LabelFor(m => m.ReceiveNewsletter)
-                                </label>
-                            </div>
-                            <div class="checkbox">
-                                <label>
-                                    @Html.CheckBoxFor(m => m.TermsAndConditions, new { type = "checkbox" })
-                                    @Html.LabelFor(m => m.TermsAndConditions)
-                                </label>
-                            </div>
+                    </div>
+                    <div class="row form-group">
+                        @Html.LabelFor(m => m.NationalIdentificationNumber, new { @class = "col-md-4 control-label white" })
+                        <div class="col-md-8">
+                            @Html.EditorFor(m => m.NationalIdentificationNumber, new { @class = "form-control" })
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="checkbox">
+                            <label>
+                                @Html.CheckBoxFor(m => m.ReceiveNewsletter, new { type = "checkbox"})
+                                @Html.LabelFor(m => m.ReceiveNewsletter, new { @class = "white" })
+                            </label>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="checkbox">
+                            <label>
+                                @Html.CheckBoxFor(m => m.TermsAndConditions, new { type = "checkbox" })
+                                @Html.LabelFor(m => m.TermsAndConditions, new { @class = "white" })
+                            </label>
                         </div>
                     </div>
                 </div>
-                <div id="address" class="tab-pane">
-                    <div class="col-md-12">
-                        <div class="form-group">
-                            @Html.LabelFor(m => m.AddressLine1, new { @class = "col-md-4 control-label" })
-                            <div class="col-md-8">
-                                @Html.EditorFor(m => m.AddressLine1, new { @class = "form-control" })
-                            </div>
+                <div class="col-md-4">
+                    <div class="row form-group">
+                        @Html.LabelFor(m => m.AddressLine1, new { @class = "col-md-4 control-label white" })
+                        <div class="col-md-8">
+                            @Html.EditorFor(m => m.AddressLine1, new { @class = "form-control" })
                         </div>
-                        <div class="form-group">
-                            @Html.LabelFor(m => m.AddressLine2, new { @class = "col-md-4 control-label" })
-                            <div class="col-md-8">
-                                @Html.EditorFor(m => m.AddressLine2, new { @class = "form-control" })
-                            </div>
+                    </div>
+                    <div class="row form-group">
+                        @Html.LabelFor(m => m.AddressLine2, new { @class = "col-md-4 control-label white" })
+                        <div class="col-md-8">
+                            @Html.EditorFor(m => m.AddressLine2, new { @class = "form-control" })
                         </div>
-                        <div class="form-group">
-                            @Html.LabelFor(m => m.Town, new { @class = "col-md-4 control-label" })
-                            <div class="col-md-8">
-                                @Html.EditorFor(m => m.Town, new { @class = "form-control" })
-                            </div>
+                    </div>
+                    <div class="row form-group">
+                        @Html.LabelFor(m => m.Town, new { @class = "col-md-4 control-label white" })
+                        <div class="col-md-8">
+                            @Html.EditorFor(m => m.Town, new { @class = "form-control" })
                         </div>
-                        <div class="form-group">
-                            @Html.LabelFor(m => m.Province, new { @class = "col-md-4 control-label" })
-                            <div class="col-md-8">
-                                @Html.EditorFor(m => m.Province, new { @class = "form-control" })
-                            </div>
+                    </div>
+                    <div class="row form-group">
+                        @Html.LabelFor(m => m.Province, new { @class = "col-md-4 control-label white" })
+                        <div class="col-md-8">
+                            @Html.EditorFor(m => m.Province, new { @class = "form-control" })
                         </div>
-                        <div class="form-group">
-                            @Html.LabelFor(m => m.PostalCode, new { @class = "col-md-4 control-label" })
-                            <div class="col-md-8">
-                                @Html.EditorFor(m => m.PostalCode, new { @class = "form-control" })
-                            </div>
+                    </div>
+                    <div class="row form-group">
+                        @Html.LabelFor(m => m.PostalCode, new { @class = "col-md-4 control-label white" })
+                        <div class="col-md-8">
+                            @Html.EditorFor(m => m.PostalCode, new { @class = "form-control" })
                         </div>
-                        <div class="form-group">
-                            @Html.LabelFor(m => m.Country, new { @class = "col-md-4 control-label" })
-                            <div class="col-md-8">
-                                @Html.EditorFor(m => m.Country, new { @class = "form-control" })
-                            </div>
+                    </div>
+                    <div class="row form-group">
+                        @Html.LabelFor(m => m.Country, new { @class = "col-md-4 control-label white" })
+                        <div class="col-md-8">
+                            @Html.EditorFor(m => m.Country, new { @class = "form-control" })
                         </div>
                     </div>
                 </div>
-                <div id="avatar" class="tab-pane">
-                    <div class="col-md-12">
-                        <div class="form-group">
-                            @Html.LabelFor(m => m.ProfilePhoto, new { @class = "col-md-8 control-label", @for = "profilePhotoFile" })
-                            <div class="col-md-4">
-                                @Html.TextBoxFor(m => m.ProfilePhoto, new { @class = "form-control", type = "file", id = "profilePhotoFile" })
-                                @Html.ValidationMessageFor(m => m.ProfilePhoto)
-                            </div>
+                <div class="col-md-4">
+                    <div class="row form-group">
+                        @Html.LabelFor(m => m.ProfilePhoto, new { @class = "col-md-6 control-label white", @for = "profilePhotoFile" })
+                        <div class="col-md-6">
+                            @Html.TextBoxFor(m => m.ProfilePhoto, new { @class = "form-control", type = "file", id = "profilePhotoFile" })
+                            @Html.ValidationMessageFor(m => m.ProfilePhoto)
                         </div>
                     </div>
+                </div>
+                <div class="row col-md-12">
+                    <input type="submit" class="btn btn-lg bg-white text-dark" value="Submit" />
                 </div>
             </div>
-            <div class="row">
-                <input type="submit" class="btn btn-primary btn-lg pull-right" value="Save" />
-            </div>
-
         }
     </div>
 }

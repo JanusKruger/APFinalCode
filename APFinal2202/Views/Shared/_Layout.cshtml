@@ -7,11 +7,13 @@
     <link rel="icon" type="image/x-icon" href="~/Content/img/white_A.png">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="~/content/css/dateTimePicker/jquery.datetimepicker.css">
     <link rel="stylesheet" href="~/content/css/libs/swiper.min.css">
     <link rel="stylesheet" href="~/content/css/libs/material-components-web.min.css">
     <link rel="stylesheet" href="~/content/css/style.css">
     <link rel="stylesheet" href="~/content/css/skins/blue.css">
     <link rel="stylesheet" href="~/content/css/responsive.css">
+    <link rel="stylesheet" href="~/content/Site.css">
 
     <title>@ViewBag.Title</title>
     @Styles.Render("~/Content/css")
@@ -140,48 +142,70 @@
                     </button>
                     <div class="mdc-menu mdc-menu-surface user-menu">
                         <ul class="mdc-list" role="menu" aria-hidden="true" aria-orientation="vertical" tabindex="-1">
-                            <li class="user-info row start-xs middle-xs">
-                                <img src="~/Content/img/images/profile/adam.jpg" alt="user-image" width="50">
-                                <p class="m-0" style="color: #fff;">Emilio Verdines <br> <small><i>emilio_v</i></small></p>
-                            </li>
-                            <li role="separator" class="mdc-list-divider m-0"></li>
+
+                            @if (User.Identity.IsAuthenticated)
+                            {
+                                <li class="user-info row start-xs middle-xs">
+                                    <img src="~/Content/img/images/avatars/avatar-1.png" alt="user-image" width="50">
+                                    <p class="m-0" style="color: #fff;">User<br></p>
+                                </li>
+                                <li role="separator" class="mdc-list-divider m-0"></li>
+                                if (User.IsInRole("SellerOrAgent"))
+                                {
+                                    <li>
+                                        <a href="@Url.Action("SubmitProperty", "Property")" class="mdc-list-item" role="menuitem">
+                                            <i class="material-icons mat-icon-sm text-muted">add_circle</i>
+                                            <span class="mdc-list-item__text px-3" style="color: #fa7f15;">Submit Property</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="@Url.Action("Details", "Seller")" class="mdc-list-item" role="menuitem">
+                                            <i class="material-icons mat-icon-sm text-muted">edit</i>
+                                            <span class="mdc-list-item__text px-3" style="color: #fa7f15;">Profile</span>
+                                        </a>
+                                    </li>
+                                }
+                                else if (User.IsInRole("Buyer"))
+                                {
+                                    <li>
+                                        <a href="@Url.Action("Properties4Buyer", "Property")" class="mdc-list-item" role="menuitem">
+                                            <i class="material-icons mat-icon-sm text-muted">home</i>
+                                            <span class="mdc-list-item__text px-3" style="color: #fa7f15;">My Properties</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="@Url.Action("Details", "Buyer")" class="mdc-list-item" role="menuitem">
+                                            <i class="material-icons mat-icon-sm text-muted">edit</i>
+                                            <span class="mdc-list-item__text px-3" style="color: #fa7f15;">Profile</span>
+                                        </a>
+                                    </li>
+                                }
+                            }
                             <li>
-                                <a href="submit-property.html" class="mdc-list-item" role="menuitem">
-                                    <i class="material-icons mat-icon-sm text-muted">add_circle</i>
-                                    <span class="mdc-list-item__text px-3" style="color: #fa7f15;">Submit Property</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="my-properties.html" class="mdc-list-item" role="menuitem">
-                                    <i class="material-icons mat-icon-sm text-muted">home</i>
-                                    <span class="mdc-list-item__text px-3" style="color: #fa7f15;">My Properties</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="profile.html" class="mdc-list-item" role="menuitem">
-                                    <i class="material-icons mat-icon-sm text-muted">edit</i>
-                                    <span class="mdc-list-item__text px-3" style="color: #fa7f15;">Edit Profile</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="lock-screen.html" class="mdc-list-item" role="menuitem">
-                                    <i class="material-icons mat-icon-sm text-muted">lock</i>
-                                    <span class="mdc-list-item__text px-3" style="color: #fa7f15;">Lock screen</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="faqs.html" class="mdc-list-item" role="menuitem">
+                                <a href="@Url.Action("Faq", "Home")" class="mdc-list-item" role="menuitem">
                                     <i class="material-icons mat-icon-sm text-muted">help</i>
                                     <span class="mdc-list-item__text px-3" style="color: #fa7f15;">Help</span>
                                 </a>
                             </li>
                             <li role="separator" class="mdc-list-divider m-0"></li>
-                            <li>
-                                <a href="login.html" class="mdc-list-item" role="menuitem">
-                                    <i class="material-icons mat-icon-sm text-muted">power_settings_new</i>
-                                    <span class="mdc-list-item__text px-3" style="color: #fa7f15;">Sign Out</span>
-                                </a>
-                            </li>
+                            @if (User.Identity.IsAuthenticated)
+                            {
+                                <li>
+                                    <a href="@Url.Action("LogOff", "Account")" class="mdc-list-item" role="menuitem">
+                                        <i class="material-icons mat-icon-sm text-muted">power_settings_new</i>
+                                        <span class="mdc-list-item__text px-3" style="color: #fa7f15;">Sign Out</span>
+                                    </a>
+                                </li>
+                            }
+                            else
+                            {
+                                <li>
+                                    <a href="@Url.Action("Login", "Account")" class="mdc-list-item" role="menuitem">
+                                        <i class="material-icons mat-icon-sm text-muted">power_settings_new</i>
+                                        <span class="mdc-list-item__text px-3" style="color: #fa7f15;">Log In</span>
+                                    </a>
+                                </li>
+                            }
                         </ul>
                     </div>
                 </div>
@@ -189,20 +213,35 @@
         </div>
         <div id="main-toolbar" class="mdc-elevation--z2">
             <div class="theme-container row between-xs middle-xs h-100">
-                <a class="logo" href="home-page.html"><img src="~/content/img/images/logos/AP White.png" width="250" height="45" alt="Auction-Prop Logo"></a>
+                <a class="logo" href="@Url.Action("Index", "Home")"><img src="~/content/img/images/logos/AP White.png" width="250" height="45" alt="Auction-Prop Logo"></a>
                 <div class="horizontal-menu d-none d-md-flex d-lg-flex d-xl-flex">
                     <div class="mdc-menu-surface--anchor">
-                        <a href="home-page.html" class="mdc-button">
+                        <a href="@Url.Action("Index", "Home")" class="mdc-button">
                             <span class="mdc-button__ripple"></span>
                             <span class="mdc-button__label">Home</span>
                         </a>
                     </div>
-                    <div>
-                        <a href="properties.html" class="mdc-button">
-                            <span class="mdc-button__ripple"></span>
-                            <span class="mdc-button__label">Properties</span>
-                        </a>
-                    </div>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        if (User.IsInRole("SellerOrAgent"))
+                        {
+                            <div>
+                                <a href="@Url.Action("Properties4Seller", "Property")" class="mdc-button">
+                                    <span class="mdc-button__ripple"></span>
+                                    <span class="mdc-button__label">Properties</span>
+                                </a>
+                            </div>
+                        }
+                        else if (User.IsInRole("Buyer"))
+                        {
+                            <div>
+                                <a href="@Url.Action("Properties4Buyer", "Property")" class="mdc-button">
+                                    <span class="mdc-button__ripple"></span>
+                                    <span class="mdc-button__label">Properties</span>
+                                </a>
+                            </div>
+                        }
+                    }
                     <div class="mdc-menu-surface--anchor">
                         <a href="javascript:void(0);" class="mdc-button menu-item-has-children">
                             <span class="mdc-button__ripple"></span>
@@ -211,31 +250,31 @@
                         <div class="mdc-menu mdc-menu-surface">
                             <div class="mdc-list">
                                 <div>
-                                    <a href="buyers-guide.html" class="mdc-button">
+                                    <a href="@Url.Action("BuyersGuide", "Home")" class="mdc-button">
                                         <span class="mdc-button__ripple"></span>
                                         <span class="mdc-button__label">Buyers Guide</span>
                                     </a>
                                 </div>
                                 <div>
-                                    <a href="sellers-guide.html" class="mdc-button">
+                                    <a href="@Url.Action("SellersGuide", "Home")" class="mdc-button">
                                         <span class="mdc-button__ripple"></span>
                                         <span class="mdc-button__label">Sellers Guide</span>
                                     </a>
                                 </div>
                                 <div>
-                                    <a href="faqs.html" class="mdc-button">
+                                    <a href="@Url.Action("Faq", "Home")" class="mdc-button">
                                         <span class="mdc-button__ripple"></span>
                                         <span class="mdc-button__label">FAQs</span>
                                     </a>
                                 </div>
                                 <div>
-                                    <a href="terms.html" class="mdc-button">
+                                    <a href="@Url.Action("Terms", "Home")" class="mdc-button">
                                         <span class="mdc-button__ripple"></span>
                                         <span class="mdc-button__label">Terms & Conditions</span>
                                     </a>
                                 </div>
                                 <div>
-                                    <a href="privacy-policy.html" class="mdc-button">
+                                    <a href="@Url.Action("Privacy", "Home")" class="mdc-button">
                                         <span class="mdc-button__ripple"></span>
                                         <span class="mdc-button__label">Privacy Policy</span>
                                     </a>
@@ -244,24 +283,24 @@
                         </div>
                     </div>
                     <div>
-                        <a href="contact.html" class="mdc-button">
+                        <a href="@Url.Action("Contact", "Home")" class="mdc-button">
                             <span class="mdc-button__ripple"></span>
                             <span class="mdc-button__label">Contact</span>
                         </a>
                     </div>
                     <div>
-                        <a href="about.html" class="mdc-button">
+                        <a href="@Url.Action("About", "Home")" class="mdc-button">
                             <span class="mdc-button__ripple"></span>
                             <span class="mdc-button__label">About us</span>
                         </a>
                     </div>
                 </div>
                 <div class="row middle-xs">
-                    <a href="submit-property.html" class="mdc-fab mdc-fab--mini primary d-sm-none d-md-none d-lg-none d-xl-none">
+                    <a href="@Url.Action("SubmitProperty", "Property")" class="mdc-fab mdc-fab--mini primary d-sm-none d-md-none d-lg-none d-xl-none">
                         <span class="mdc-fab__ripple"></span>
                         <span class="mdc-fab__icon material-icons">add</span>
                     </a>
-                    <a href="submit-property.html" class="mdc-button mdc-button--raised d-none d-sm-flex d-md-flex d-lg-flex d-xl-flex">
+                    <a href="@Url.Action("SubmitProperty", "Property")" class="mdc-button mdc-button--raised d-none d-sm-flex d-md-flex d-lg-flex d-xl-flex">
                         <span class="mdc-button__ripple"></span>
                         <span class="mdc-button__label">submit property</span>
                     </a>
@@ -295,7 +334,7 @@
                 <div class="py-5 content">
                     <div class="row between-xs">
                         <div class="col-xs-12 col-sm-5 col-md-4 p-0">
-                            <a class="logo" href="home-page.html"><img src="~/content/img/images/logos/AP White.png" width="250" height="45" alt="Auction-Prop Logo"></a>
+                            <a class="logo" href="@Url.Action("Index", "Home")"><img src="~/content/img/images/logos/AP White.png" width="250" height="45" alt="Auction-Prop Logo"></a>
                             <p class="row middle-xs mt-2">
                                 <i class="material-icons primary-color">location_on</i>
                                 <span class="mx-2">Fintech Campus, 81 Botterklapper Str, Pretoria</span>
@@ -368,7 +407,9 @@
     <!-- ====== Page Footer End ====== -->
 
     <div id="back-to-top"><i class="material-icons">arrow_upward</i></div>
-    <script src="~/content/js/libs/jquery.min.js"></script>
+    <script src="~/Scripts/jquery-3.4.1.js"></script>
+    <script src="~/Scripts/dateTimePicker/jquery.datetimepicker.full.js"></script>
+    <script src="~/Scripts/dateTimePicker/jquery.datetimepicker.js"></script>
     <script src="~/content/js/libs/material-components-web.min.js"></script>
     <script src="~/content/js/libs/swiper.min.js"></script>
     <script src="~/content/js/scripts.js"></script>

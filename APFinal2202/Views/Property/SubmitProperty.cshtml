@@ -22,43 +22,43 @@
         @Html.ValidationSummary("", new { @class = "text-danger" })
         <div class="col-md-4">
             <div class="form-group">
-                @Html.LabelFor(m => m.Title, new { @class = "col-md-4 control-label" })
+                @Html.LabelFor(m => m.Title, new { @class = "col-md-4 control-label white" })
                 <div class="col-md-8">
                     @Html.TextBoxFor(m => m.Title, new { @class = "form-control" })
                 </div>
             </div>
             <div class="form-group">
-                @Html.LabelFor(m => m.Description, new { @class = "col-md-4 control-label" })
+                @Html.LabelFor(m => m.Description, new { @class = "col-md-4 control-label white" })
                 <div class="col-md-8">
                     @Html.TextBoxFor(m => m.Description, new { @class = "form-control" })
                 </div>
             </div>
             <div class="form-group">
-                @Html.LabelFor(m => m.PropertyType, new { @class = "col-md-4 control-label" })
+                @Html.LabelFor(m => m.PropertyType, new { @class = "col-md-4 control-label white" })
                 <div class="col-md-8">
                     @Html.DropDownListFor(m => m.PropertyType, GetList<PropertyType>(), "Property Type", new { @class = "form-control" })
                 </div>
             </div>
             <div class="form-group">
-                @Html.LabelFor(m => m.OwnershipType, new { @class = "col-md-4 control-label" })
+                @Html.LabelFor(m => m.OwnershipType, new { @class = "col-md-4 control-label white" })
                 <div class="col-md-8">
                     @Html.DropDownListFor(m => m.OwnershipType, GetList<OwnershipType>(), "Ownership Type", new { @class = "form-control" })
                 </div>
             </div>
             <div class="form-group">
-                @Html.LabelFor(m => m.PropertyStatus, new { @class = "col-md-4 control-label" })
+                @Html.LabelFor(m => m.PropertyStatus, new { @class = "col-md-4 control-label white" })
                 <div class="col-md-8">
                     @Html.DropDownListFor(m => m.PropertyStatus, GetList<PropertyStatus>(), "Property Status", new { @class = "form-control", id = "propertyStatus" })
                 </div>
             </div>
             <div class="form-group">
-                @Html.LabelFor(m => m.PropertyMultimedia, new { @class = "col-md-4 control-label", @for = "propertyMultimedia" })
+                @Html.LabelFor(m => m.PropertyMultimedia, new { @class = "col-md-4 control-label white", @for = "propertyMultimedia" })
                 <div class="col-md-8">
                     @Html.TextBoxFor(m => m.PropertyMultimedia, new { @class = "form-control", type = "file", multiple = "multiple", id = "propertyMultimedia" })
                 </div>
             </div>
             <div class="form-group">
-                @Html.LabelFor(m => m.Blueprint, new { @class = "col-md-4 control-label", @for = "propertyBlueprint" })
+                @Html.LabelFor(m => m.Blueprint, new { @class = "col-md-4 control-label white", @for = "propertyBlueprint" })
                 <div class="col-md-8">
                     @Html.TextBoxFor(m => m.Blueprint, new { @class = "form-control", type = "file", id = "propertyBlueprint" })
                 </div>
@@ -66,37 +66,37 @@
         </div>
         <div class="col-md-4">
             <div class="form-group">
-                @Html.LabelFor(m => m.AddressLine1, new { @class = "col-md-4 control-label" })
+                @Html.LabelFor(m => m.AddressLine1, new { @class = "col-md-4 control-label white" })
                 <div class="col-md-8">
                     @Html.TextBoxFor(m => m.AddressLine1, new { @class = "form-control" })
                 </div>
             </div>
             <div class="form-group">
-                @Html.LabelFor(m => m.AddressLine2, new { @class = "col-md-4 control-label" })
+                @Html.LabelFor(m => m.AddressLine2, new { @class = "col-md-4 control-label white" })
                 <div class="col-md-8">
                     @Html.TextBoxFor(m => m.AddressLine2, new { @class = "form-control" })
                 </div>
             </div>
             <div class="form-group">
-                @Html.LabelFor(m => m.Town, new { @class = "col-md-4 control-label" })
+                @Html.LabelFor(m => m.Town, new { @class = "col-md-4 control-label white" })
                 <div class="col-md-8">
                     @Html.TextBoxFor(m => m.Town, new { @class = "form-control" })
                 </div>
             </div>
             <div class="form-group">
-                @Html.LabelFor(m => m.Province, new { @class = "col-md-4 control-label" })
+                @Html.LabelFor(m => m.Province, new { @class = "col-md-4 control-label white" })
                 <div class="col-md-8">
                     @Html.TextBoxFor(m => m.Province, new { @class = "form-control" })
                 </div>
             </div>
             <div class="form-group">
-                @Html.LabelFor(m => m.PostalCode, new { @class = "col-md-4 control-label" })
+                @Html.LabelFor(m => m.PostalCode, new { @class = "col-md-4 control-label white" })
                 <div class="col-md-8">
                     @Html.TextBoxFor(m => m.PostalCode, new { @class = "form-control" })
                 </div>
             </div>
             <div class="form-group">
-                @Html.LabelFor(m => m.Country, new { @class = "col-md-4 control-label" })
+                @Html.LabelFor(m => m.Country, new { @class = "col-md-4 control-label white" })
                 <div class="col-md-8">
                     @Html.TextBoxFor(m => m.Country, new { @class = "form-control" })
                 </div>
@@ -104,43 +104,43 @@
         </div>
         <div class="col-md-4">
             <div class="form-group">
-                @Html.LabelFor(m => m.Bedrooms, new { @class = "col-md-4 control-label" })
+                @Html.LabelFor(m => m.Bedrooms, new { @class = "col-md-4 control-label white" })
                 <div class="col-md-8">
                     @Html.DropDownListFor(m => m.Bedrooms, GetList<RoomType>(), "Number of Bedrooms", new { @class = "form-control" })
                 </div>
             </div>
             <div class="form-group">
-                @Html.LabelFor(m => m.Bathrooms, new { @class = "col-md-4 control-label" })
+                @Html.LabelFor(m => m.Bathrooms, new { @class = "col-md-4 control-label white" })
                 <div class="col-md-8">
                     @Html.DropDownListFor(m => m.Bathrooms, GetList<RoomType>(), "Number of Bathrooms", new { @class = "form-control" })
                 </div>
             </div>
             <div class="form-group">
-                @Html.LabelFor(m => m.FloorSize, new { @class = "col-md-4 control-label" })
+                @Html.LabelFor(m => m.FloorSize, new { @class = "col-md-4 control-label white" })
                 <div class="col-md-8">
                     @Html.TextBoxFor(m => m.FloorSize, new { @class = "form-control" })
                 </div>
             </div>
             <div class="form-group">
-                @Html.LabelFor(m => m.ErfSize, new { @class = "col-md-4 control-label" })
+                @Html.LabelFor(m => m.ErfSize, new { @class = "col-md-4 control-label white" })
                 <div class="col-md-8">
                     @Html.TextBoxFor(m => m.ErfSize, new { @class = "form-control" })
                 </div>
             </div>
             <div class="form-group">
-                @Html.LabelFor(m => m.MonthlyLevies, new { @class = "col-md-4 control-label" })
+                @Html.LabelFor(m => m.MonthlyLevies, new { @class = "col-md-4 control-label white" })
                 <div class="col-md-8">
                     @Html.TextBoxFor(m => m.MonthlyLevies, new { @class = "form-control" })
                 </div>
             </div>
             <div class="form-group">
-                @Html.LabelFor(m => m.RatesAndTaxes, new { @class = "col-md-4 control-label" })
+                @Html.LabelFor(m => m.RatesAndTaxes, new { @class = "col-md-4 control-label white" })
                 <div class="col-md-8">
                     @Html.TextBoxFor(m => m.RatesAndTaxes, new { @class = "form-control" })
                 </div>
             </div>
             <div class="form-group">
-                @Html.LabelFor(m => m.SpecialLevies, new { @class = "col-md-4 control-label" })
+                @Html.LabelFor(m => m.SpecialLevies, new { @class = "col-md-4 control-label white" })
                 <div class="col-md-8">
                     @Html.TextBoxFor(m => m.SpecialLevies, new { @class = "form-control" })
                 </div>
@@ -152,31 +152,31 @@
                     <div class="checkbox">
                         <label>
                             @Html.CheckBoxFor(m => m.Borehole, new { type = "checkbox" })
-                            @Html.LabelFor(m => m.Borehole)
+                            @Html.LabelFor(m => m.Borehole, new { @class = "white" })
                         </label>
                     </div>
                     <div class="checkbox">
                         <label>
                             @Html.CheckBoxFor(m => m.BuiltInCupboards, new { type = "checkbox" })
-                            @Html.LabelFor(m => m.BuiltInCupboards)
+                            @Html.LabelFor(m => m.BuiltInCupboards, new { @class = "white" })
                         </label>
                     </div>
                     <div class="checkbox">
                         <label>
                             @Html.CheckBoxFor(m => m.Carpets, new { type = "checkbox" })
-                            @Html.LabelFor(m => m.Carpets)
+                            @Html.LabelFor(m => m.Carpets, new { @class = "white" })
                         </label>
                     </div>
                     <div class="checkbox">
                         <label>
                             @Html.CheckBoxFor(m => m.Carport, new { type = "checkbox" })
-                            @Html.LabelFor(m => m.Carport)
+                            @Html.LabelFor(m => m.Carport, new { @class = "white" })
                         </label>
                     </div>
                     <div class="checkbox">
                         <label>
                             @Html.CheckBoxFor(m => m.DomesticBathroom, new { type = "checkbox" })
-                            @Html.LabelFor(m => m.DomesticBathroom)
+                            @Html.LabelFor(m => m.DomesticBathroom, new { @class = "white" })
                         </label>
                     </div>
                 </div>
@@ -184,31 +184,31 @@
                     <div class="checkbox">
                         <label>
                             @Html.CheckBoxFor(m => m.DoubleGarage, new { type = "checkbox" })
-                            @Html.LabelFor(m => m.DoubleGarage)
+                            @Html.LabelFor(m => m.DoubleGarage, new { @class = "white" })
                         </label>
                     </div>
                     <div class="checkbox">
                         <label>
                             @Html.CheckBoxFor(m => m.Clubhouse, new { type = "checkbox" })
-                            @Html.LabelFor(m => m.Clubhouse)
+                            @Html.LabelFor(m => m.Clubhouse, new { @class = "white" })
                         </label>
                     </div>
                     <div class="checkbox">
                         <label>
                             @Html.CheckBoxFor(m => m.FiberInternet, new { type = "checkbox" })
-                            @Html.LabelFor(m => m.FiberInternet)
+                            @Html.LabelFor(m => m.FiberInternet, new { @class = "white" })
                         </label>
                     </div>
                     <div class="checkbox">
                         <label>
                             @Html.CheckBoxFor(m => m.Garage, new { type = "checkbox" })
-                            @Html.LabelFor(m => m.Garage)
+                            @Html.LabelFor(m => m.Garage, new { @class = "white" })
                         </label>
                     </div>
                     <div class="checkbox">
                         <label>
                             @Html.CheckBoxFor(m => m.Garden, new { type = "checkbox" })
-                            @Html.LabelFor(m => m.Garden)
+                            @Html.LabelFor(m => m.Garden, new { @class = "white" })
                         </label>
                     </div>
                 </div>
@@ -216,35 +216,33 @@
                     <div class="checkbox">
                         <label>
                             @Html.CheckBoxFor(m => m.SolarPower, new { type = "checkbox" })
-                            @Html.LabelFor(m => m.SolarPower)
+                            @Html.LabelFor(m => m.SolarPower, new { @class = "white" })
                         </label>
                     </div>
                     <div class="checkbox">
                         <label>
                             @Html.CheckBoxFor(m => m.SwimmingPool, new { type = "checkbox" })
-                            @Html.LabelFor(m => m.SwimmingPool)
+                            @Html.LabelFor(m => m.SwimmingPool, new { @class = "white" })
                         </label>
                     </div>
                     <div class="checkbox">
                         <label>
                             @Html.CheckBoxFor(m => m.TiledFloors, new { type = "checkbox" })
-                            @Html.LabelFor(m => m.TiledFloors)
+                            @Html.LabelFor(m => m.TiledFloors, new { @class = "white" })
                         </label>
                     </div>
                     <div class="checkbox">
                         <label>
                             @Html.CheckBoxFor(m => m.VisitorParking, new { type = "checkbox" })
-                            @Html.LabelFor(m => m.VisitorParking)
+                            @Html.LabelFor(m => m.VisitorParking, new { @class = "white" })
                         </label>
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="form-group text-center">
-                    <div class="col-md-12">
-                        <p>When you click on submit please set the details for the auction for this property</p>
-                        <input type="submit" class="btn btn-default" value="Submit" />
-                    </div>
+            <div class="form-group text-center">
+                <div class="col-md-12">
+                    <p class="white">When you click on submit please set the details for the auction for this property</p>
+                    <input type="submit" class="btn btn-default" value="Submit" />
                 </div>
             </div>
         </div>
