@@ -1,0 +1,169 @@
+﻿@model APFinal2202.ViewModels.Buyer.GetBuyerDetailsViewModel
+@{
+    ViewBag.Title = "Buyer Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>@ViewBag.Title</h1>
+<div class="container">
+    <div class="jumbotron">
+        <h3>This is buyer <strong>@Model.FirstName</strong> details page</h3>
+        @Html.ActionLink("List Properties", "Properties4Buyer", "Property", null, new { @class = "btn btn-primary btn-lg pull-right" })
+        <br />
+    </div>
+    <ul class="nav nav-pills nav-justified" role="tablist" id="buyerDetails">
+        <li role="presentation" class="active ">
+            <a href="#details" aria-controls="details" role="tab" data-toggle="tab">Details</a>
+        </li>
+        <li role="presentation">
+            <a href="#personal" aria-controls="personal" role="tab" data-toggle="tab">Personal</a>
+        </li>
+        <li role="presentation">
+            <a href="#address" aria-controls="address" role="tab" data-toggle="tab">Address</a>
+        </li>
+        <li role="presentation">
+            <a href="#avatar" aria-controls="avatar" role="tab" data-toggle="tab">Avatar</a>
+        </li>
+    </ul>
+    <br />
+    <div class="tab-content clearfix parent">
+        <div class="tab-pane active" id="details">
+            <div class="row form-group">
+                <div class="checkbox">
+                    <label>
+                        @Html.DisplayFor(m => m.Signature, new { type = "checkbox" })
+                        @Html.LabelFor(m => m.Signature)
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        @Html.DisplayFor(m => m.ApprovalStatus, new { type = "checkbox" })
+                        @Html.LabelFor(m => m.ApprovalStatus)
+                    </label>
+                </div>
+            </div>
+            <div class="row form-group">
+                @Html.LabelFor(m => m.SellerType, new { @class = "col-md-4 control-label" })
+                <div class="col-md-8">
+                    @Html.DisplayFor(m => m.SellerType, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="row form-group">
+                @Html.LabelFor(m => m.NationalIdentificationNumber, new { @class = "col-md-4 control-label" })
+                <div class="col-md-8">
+                    @Html.DisplayFor(m => m.NationalIdentificationNumber, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="checkbox">
+                    <label>
+                        @Html.DisplayFor(m => m.ReceiveNewsletter, new { type = "checkbox" })
+                        @Html.LabelFor(m => m.ReceiveNewsletter)
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        @Html.DisplayFor(m => m.TermsAndConditions, new { type = "checkbox" })
+                        @Html.LabelFor(m => m.TermsAndConditions)
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div id="personal" class="tab-pane">
+            <div class="row form-group">
+                @Html.LabelFor(m => m.FirstName, new {@class = "col-md-4 control-label"})
+                <div class="col-md-8">
+                    @Html.DisplayFor(m => m.FirstName, new {@class = "form-control"})
+                </div>
+            </div>
+            <div class="row form-group">
+                @Html.LabelFor(m => m.LastName, new {@class = "col-md-4 control-label"})
+                <div class="col-md-8">
+                    @Html.DisplayFor(m => m.LastName, new {@class = "form-control"})
+                </div>
+            </div>
+            <div class="row form-group">
+                @Html.LabelFor(m => m.Username, new {@class = "col-md-4 control-label"})
+                <div class="col-md-8">
+                    @Html.DisplayFor(m => m.Username, new {@class = "form-control"})
+                </div>
+            </div>
+            <div class="row form-group">
+                @Html.LabelFor(m => m.Email, new {@class = "col-md-4 control-label"})
+                <div class="col-md-8">
+                    @Html.DisplayFor(m => m.Email, new {@class = "form-control"})
+                </div>
+            </div>
+            <div class="row form-group">
+                @Html.LabelFor(m => m.PhoneNumber, new {@class = "col-md-4 control-label"})
+                <div class="col-md-8">
+                    @Html.DisplayFor(m => m.PhoneNumber, new {@class = "form-control"})
+                </div>
+            </div>
+            <div class="row form-group">
+                @Html.LabelFor(m => m.Role, new {@class = "col-md-4 control-label"})
+                <div class="col-md-8">
+                    @Html.DisplayFor(m => m.Role, new {@class = "form-control"})
+                </div>
+            </div>
+        </div>
+        <div id="address" class="tab-pane">
+            <div class="row form-group">
+                @Html.LabelFor(m => m.AddressLine1, new { @class = "col-md-4 control-label" })
+                <div class="col-md-8">
+                    @Html.DisplayFor(m => m.AddressLine1, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="row form-group">
+                @Html.LabelFor(m => m.AddressLine2, new { @class = "col-md-4 control-label pull-left" })
+                <div class="col-md-8">
+                    @Html.DisplayFor(m => m.AddressLine2, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="row form-group">
+                @Html.LabelFor(m => m.Town, new { @class = "col-md-4 control-label" })
+                <div class="col-md-8">
+                    @Html.DisplayFor(m => m.Town, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="row form-group">
+                @Html.LabelFor(m => m.Province, new { @class = "col-md-4 control-label" })
+                <div class="col-md-8">
+                    @Html.DisplayFor(m => m.Province, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="row form-group">
+                @Html.LabelFor(m => m.PostalCode, new { @class = "col-md-4 control-label" })
+                <div class="col-md-8">
+                    @Html.DisplayFor(m => m.PostalCode, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="row form-group">
+                @Html.LabelFor(m => m.Country, new { @class = "col-md-4 control-label" })
+                <div class="col-md-8">
+                    @Html.DisplayFor(m => m.Country, new { @class = "form-control" })
+                </div>
+            </div>
+        </div>
+        <div id="avatar" class="tab-pane">
+            <div class="row form-group">
+                @Html.LabelFor(m => m.PhotoType, new { @class = "col-md-4 control-label" })
+                <div class="col-md-8">
+                    @Html.DisplayFor(m => m.PhotoType, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="row form-group">
+                @Html.LabelFor(m => m.FileName, new { @class = "col-md-4 control-label" })
+                <div class="col-md-8">
+                    @Html.DisplayFor(m => m.FileName, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="row form-group">
+                @Html.LabelFor(m => m.Image, new { @class = "col-md-4 control-label" })
+                <div class="col-md-8">
+                    <img src="@Model.Image" alt="@Model.PhotoType" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

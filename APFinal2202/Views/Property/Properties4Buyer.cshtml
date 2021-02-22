@@ -1,0 +1,262 @@
+﻿@model IEnumerable<APFinal2202.ViewModels.Property.GetPropertyViewModel>
+
+@{
+    ViewBag.Title = "Properties For Buyer";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<table class="table table-condensed table-bordered table-striped">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.PropertyTitle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PropertyDescription)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PropertyType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PropertyStatus)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Bedrooms)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Bathrooms)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FloorSize)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ErfSize)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MonthlyLevies)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RatesAndTaxes)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SpecialLevies)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Borehole)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BuiltInCupboards)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Carpets)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Carport)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DomesticBathroom)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DoubleGarage)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Clubhouse)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FiberInternet)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Garage)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Garden)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SolarPower)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SwimmingPool)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TiledFloors)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VisitorParking)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AddressLine1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AddressLine2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Town)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Province)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PostalCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Country)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PhotoType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FileName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Image)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OpeningBid)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AuctionStart)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AuctionEnd)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AuctionType)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PropertyTitle)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PropertyDescription)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PropertyType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PropertyStatus)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Bedrooms)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Bathrooms)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FloorSize)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ErfSize)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MonthlyLevies)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RatesAndTaxes)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SpecialLevies)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Borehole)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BuiltInCupboards)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Carpets)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Carport)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DomesticBathroom)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DoubleGarage)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Clubhouse)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FiberInternet)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Garage)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Garden)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SolarPower)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SwimmingPool)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TiledFloors)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VisitorParking)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AddressLine1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AddressLine2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Town)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Province)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PostalCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Country)
+            </td>
+
+            @foreach (var singleItem in item.PhotoType)
+            {
+                <td>@Html.Display(singleItem)</td>
+            }
+
+            @foreach (var singleItem in item.FileName)
+            {
+                <td>
+                    @Html.Display(singleItem)
+                </td>
+            }
+
+            @foreach (var singleItem in item.Image)
+            {
+                <td>
+                    <img src="@singleItem" alt="propertyPhoto" />
+                </td>
+            }
+
+            <td>
+                @Html.DisplayFor(modelItem => item.OpeningBid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AuctionStart)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AuctionEnd)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AuctionType)
+            </td>
+            <td>
+                @Html.ActionLink("Bid", "PlaceBid", "Bid", new { id = item.Id }, null)
+            </td>
+        </tr>
+    }
+
+</table>

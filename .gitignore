@@ -1,0 +1,10 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs/APFinal2202/v15
+/.vs/config
+/packages
+/APFinal2202/obj
+/APFinal2202/bin
+/APFinal2202/App_Data

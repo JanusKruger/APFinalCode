@@ -1,0 +1,27 @@
+﻿@model IEnumerable<APFinal2202.ViewModels.Property.GetPropertyViewModel>
+@{
+    ViewBag.Title = "Buyer";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@if (User.IsInRole("Administrator"))
+{
+    <div class="jumbotron">
+        <div class="row">
+            <h1>This is the @ViewBag.Title page</h1>
+            <p>Here are the list of buyers</p>
+        </div>
+    </div>
+}
+else
+{
+    <h1>@ViewBag.Title</h1>
+    <div class="container">
+        <div class="jumbotron">
+            <h3>These are the properties you can bid for</h3>
+        </div>
+    </div>
+
+
+}

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 
 namespace APFinal2202.Controllers
 {
@@ -26,9 +22,9 @@ namespace APFinal2202.Controllers
 
             return View();
         }
-        public ActionResult AuctionRoom ()
+        public ActionResult AuctionRoom()
         {
-            ViewBag.Message = "Auctionroom .";
+            ViewBag.Message = "Auction room.";
 
             return View();
         }
@@ -40,7 +36,7 @@ namespace APFinal2202.Controllers
         }
         public ActionResult PropertyDetailPage()
         {
-            ViewBag.Message = "Detail Page .";
+            ViewBag.Message = "Detail Page.";
 
             return View();
         }
@@ -56,7 +52,7 @@ namespace APFinal2202.Controllers
 
             return View();
         }
-        public ActionResult FAQ()
+        public ActionResult Faq()
         {
             ViewBag.Message = "Questions.";
 
@@ -64,7 +60,7 @@ namespace APFinal2202.Controllers
         }
         public ActionResult SubmitProperty()
         {
-            ViewBag.Message = "Submitproperty.";
+            ViewBag.Message = "Submit Property.";
 
             return View();
         }

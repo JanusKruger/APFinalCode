@@ -1,0 +1,27 @@
+﻿@{
+    ViewBag.Title = "Delete Role";
+}
+
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm("Delete", "Roles", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    @Html.AntiForgeryToken()
+    <h4>Delete an existing Role</h4>
+    <hr />
+    @Html.ValidationSummary("", new { @class = "text-danger" })
+
+    <div class="form-group">
+        <label class="col-md-2 control-label">
+            @Html.Label("Role")
+        </label>
+        <div class="col-md-10">
+            <input class="form-control" type="text" />
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" onclick="@Url.Action("Delete", "Roles")?/role=''" class="btn btn-danger" value="Delete" />
+        </div>
+    </div>
+}

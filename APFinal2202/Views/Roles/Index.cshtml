@@ -1,0 +1,20 @@
+﻿@model APFinal2202.ViewModels.Account.UserRolesViewModel
+@{
+    ViewBag.Title = "Roles";
+}
+
+<h2>@ViewBag.Title</h2>
+
+@foreach (var item in Model.Roles)
+{
+    <ul class="list-group">
+        <li class="list-group-item active">@item.Name</li>
+        @foreach (var user in item.Users)
+        {
+            foreach (var modelUser in Model.Users.Where(modelUser => user.UserId.Equals(modelUser.Id)))
+            {
+                <li class="list-group-item">@modelUser.UserName</li>
+            }
+        }
+    </ul>
+}

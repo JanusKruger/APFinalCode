@@ -4222,7 +4222,7 @@ footer {
 
 @import "lesshat";
 
-// START: TEMPLATE
+/* START: TEMPLATE */
 @blue: #26bbf0;
 @green: #c2d5a0;
 @red: #cf6a6d;
@@ -4242,12 +4242,12 @@ body {
     font-family: "proxima-nova-soft", sans-serif;
     -webkit-user-select: none;
     overflow: hidden;
-    .vertical-centered-box
+}
 
-{
+/*.vertical-centered-box {
     position: absolute;
     .size(100%);
-    text-align: center;
+    text-align: center
     &:after
 
 {
@@ -4266,15 +4266,10 @@ body {
     font-size: 0;
 }
 
-}
-}
+
 
 * {
     .transition(all .3s);
-}
+}*/
 
-// END: TEMPLATE
-
-
-/* Countdown Timer */
-
+/*  END: TEMPLATE */

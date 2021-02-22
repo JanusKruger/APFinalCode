@@ -1,0 +1,29 @@
+﻿@model Microsoft.AspNet.Identity.EntityFramework.IdentityRole
+@{
+    ViewBag.Title = "Edit";
+}
+
+@if (User.Identity.IsAuthenticated && User.IsInRole("Administrator"))
+{
+    <h2>Edit Role</h2>
+
+    @Html.ActionLink("List Roles", "Index")
+    <hr />
+    using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+        @Html.HiddenFor(model => model.Id)
+        <div>
+            Role name
+        </div>
+        <p>
+            @Html.TextBoxFor(model => model.Name)
+        </p>
+        <input type="submit" value="Save" />
+    }
+}
+else
+{
+    <h2>You do not have the access to this page</h2>
+}

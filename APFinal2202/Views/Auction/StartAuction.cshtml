@@ -1,0 +1,71 @@
+﻿@using APFinal2202.Enums
+@using APFinal2202.Helpers
+
+@model APFinal2202.ViewModels.AuctionViewModel
+
+@{
+    IList<SelectListItem> GetList<T>()
+    {
+        var names = Enum.GetNames(typeof(T));
+        return names.Select(name => new SelectListItem { Text = name.Humanize(), Value = name.Humanize() }).ToList();
+    }
+
+    ViewBag.Title = "Auction for " + ViewBag.SubTitle;
+}
+
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm("StartAuction", "Auction", FormMethod.Post, new { propertyId = ViewBag.Id }))
+{
+    @Html.AntiForgeryToken()
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.OpeningBid, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.OpeningBid, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.OpeningBid, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.AuctionStart, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.AuctionStart, new { htmlAttributes = new { @class = "form-control", id = "auctionStartDate", placeholder = "Enter Auction start date" } })
+                @Html.ValidationMessageFor(model => model.AuctionStart, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.AuctionEnd, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.AuctionEnd, new { htmlAttributes = new { @class = "form-control", id = "auctionEndDate", placeholder = "Enter Auction end date" } })
+                @Html.ValidationMessageFor(model => model.AuctionEnd, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.AuctionType, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(m => m.AuctionType, GetList<AuctionType>(), "Auction Type", new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.AuctionType, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+<script>
+    $('#auctionStartDate').datetimepicker({
+        contentWindow: window,
+        ownerDocument: document
+    });
+
+    $('#auctionEndDate').datetimepicker({
+        contentWindow: window,
+        ownerDocument: document
+    });
+</script>

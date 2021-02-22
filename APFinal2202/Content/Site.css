@@ -22,3 +22,27 @@ select,
 textarea {
     max-width: 280px;
 }
+
+/* LAYOUT DETAILS*/
+
+.logo {
+    width: auto;
+    height: 45px;
+}
+
+.white {
+    color: white;
+}
+
+
+/* SELLER DETAILS*/
+
+.parent img {
+    width: 145px;
+    height: 145px;
+}
+
+/* BID DETAILS */
+.timeOfBid {
+    padding-top: 7px;
+}

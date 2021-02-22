@@ -1,13 +1,33 @@
-﻿<!DOCTYPE html>
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Error</title>
-</head>
-<body>
-    <hgroup>
-        <h1>Error.</h1>
-        <h2>An error occurred while processing your request.</h2>
-    </hgroup>
-</body>
-</html>
+﻿@model System.Web.Mvc.HandleErrorInfo
+
+@{
+    ViewBag.Title = "Error";
+}
+
+@{
+    if (string.IsNullOrEmpty(ViewBag.ErrorMessage))
+    {
+        <h2 class="text-danger">An error occurred!</h2>
+    }
+    else
+    {
+        if (User.Identity.IsAuthenticated)
+        {
+            if (User.IsInRole("SellerOrAgent"))
+            {
+                <h2 class="text-danger">@ViewBag.ErrorMessage</h2>
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Properties For Seller", "Properties4Seller", "Property")</li>
+                </ul>
+            }
+            else if (User.IsInRole("Buyer"))
+            {
+                <h2 class="text-danger">@ViewBag.ErrorMessage</h2>
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Properties For Buyer", "Properties4Buyer", "Property")</li>
+                </ul>
+
+            }
+        }
+    }
+}

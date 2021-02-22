@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Auction-Prop.com</title>
     <link rel="icon" type="image/x-icon" href="~/Content/img/white_A.png">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -13,6 +12,10 @@
     <link rel="stylesheet" href="~/content/css/style.css">
     <link rel="stylesheet" href="~/content/css/skins/blue.css">
     <link rel="stylesheet" href="~/content/css/responsive.css">
+
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
 </head>
 
 <!-- ======= Header/Navbar ======= -->
@@ -53,7 +56,7 @@
         <div class="mdc-drawer__content">
             <div class="vertical-menu">
                 <div class="mdc-menu-surface--anchor">
-                    <a href="home-page.html" class="mdc-button">
+                    <a href="@Url.Action("Index", "Home")" class="mdc-button">
                         <span class="mdc-button__ripple"></span>
                         <span class="mdc-button__label">Home</span>
                     </a>
@@ -72,46 +75,40 @@
                     <div class="mdc-menu mdc-menu-surface">
                         <div class="mdc-list">
                             <div>
-                                <a href="buyers-guide.html" class="mdc-button">
+                                <a href="@Url.Action("BuyersGuide", "Home")" class="mdc-button">
                                     <span class="mdc-button__ripple"></span>
                                     <span class="mdc-button__label">Buyers Guide</span>
                                 </a>
                             </div>
                             <div>
-                                <a href="sellers-guide.html" class="mdc-button">
+                                <a href="@Url.Action("SellersGuide", "Home")" class="mdc-button">
                                     <span class="mdc-button__ripple"></span>
                                     <span class="mdc-button__label">Sellers Guide</span>
                                 </a>
                             </div>
                             <div>
-                                <a href="faqs.html" class="mdc-button">
+                                <a href="@Url.Action("Faq", "Home")" class="mdc-button">
                                     <span class="mdc-button__ripple"></span>
                                     <span class="mdc-button__label">FAQs</span>
                                 </a>
                             </div>
                             <div>
-                                <a href="terms.html" class="mdc-button">
+                                <a href="@Url.Action("Terms", "Home")" class="mdc-button">
                                     <span class="mdc-button__ripple"></span>
                                     <span class="mdc-button__label">Terms & Conditions</span>
-                                </a>
-                            </div>
-                            <div>
-                                <a href="privacy-policy.html" class="mdc-button">
-                                    <span class="mdc-button__ripple"></span>
-                                    <span class="mdc-button__label">Privacy Policy</span>
                                 </a>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div>
-                    <a href="contact.html" class="mdc-button">
+                    <a href="@Url.Action("Contact", "Home")" class="mdc-button">
                         <span class="mdc-button__ripple"></span>
                         <span class="mdc-button__label">Contact</span>
                     </a>
                 </div>
                 <div>
-                    <a href="about.html" class="mdc-button">
+                    <a href="@Url.Action("About", "Home")" class="mdc-button">
                         <span class="mdc-button__ripple"></span>
                         <span class="mdc-button__label">About us</span>
                     </a>
@@ -190,11 +187,9 @@
                 </div>
             </div>
         </div>
-        </div>
         <div id="main-toolbar" class="mdc-elevation--z2">
             <div class="theme-container row between-xs middle-xs h-100">
                 <a class="logo" href="home-page.html"><img src="~/content/img/images/logos/AP White.png" width="250" height="45" alt="Auction-Prop Logo"></a>
-                </a>
                 <div class="horizontal-menu d-none d-md-flex d-lg-flex d-xl-flex">
                     <div class="mdc-menu-surface--anchor">
                         <a href="home-page.html" class="mdc-button">
@@ -301,8 +296,6 @@
                     <div class="row between-xs">
                         <div class="col-xs-12 col-sm-5 col-md-4 p-0">
                             <a class="logo" href="home-page.html"><img src="~/content/img/images/logos/AP White.png" width="250" height="45" alt="Auction-Prop Logo"></a>
-                            </a>
-                            <!--<p class="mt-5 mb-3 desc">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nostrum perspiciatis cupiditate numquam odio explicabo accusantium deserunt incidunt.</p>-->
                             <p class="row middle-xs mt-2">
                                 <i class="material-icons primary-color">location_on</i>
                                 <span class="mx-2">Fintech Campus, 81 Botterklapper Str, Pretoria</span>
@@ -381,6 +374,8 @@
     <script src="~/content/js/scripts.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA1rF9bttCxRmsNdZYjW7FzIoyrul5jb-s&callback=initMap" async defer></script>
 
-
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/Scripts")
+    @RenderSection("scripts", false)
 </body>
 </html>
