@@ -18,5 +18,9 @@ namespace APFinal2202.Models
         public string LastName { get; set; }
 
         public string Role { get; set; }
+
+        public string NationalIdentificationNumber { get; set; }
+
+        public bool ReceiveNewsletter { get; set; }
     }
 }

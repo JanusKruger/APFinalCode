@@ -23,19 +23,6 @@ namespace APFinal2202.ViewModels.SellerOrAgent
         public string SellerType { get; set; }
 
         [Required]
-        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 10)]
-        [Display(Name = "National ID")]
-        public string NationalIdentificationNumber { get; set; }
-
-
-        [Display(Name = "Do you want to receive our newsletter?")]
-        public bool ReceiveNewsletter { get; set; }
-
-        [Required]
-        [Display(Name = "Do you agree with the terms and conditions?")]
-        public bool TermsAndConditions { get; set; }
-
-        [Required]
         [DataType(DataType.Text)]
         [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 5)]
         [Display(Name = "Address Line 1")]

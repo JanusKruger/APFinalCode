@@ -18,14 +18,11 @@ namespace APFinal2202.ViewModels.SellerOrAgent
         public string SellerType { get; set; }
 
         [DataType(DataType.Text)]
-        [Display(Name = "National ID")]
+        [Display(Name = "ID Number")]
         public string NationalIdentificationNumber { get; set; }
 
-        [Display(Name = "Do you want to receive our newsletter?")]
+        [Display(Name = "Your choice for receiving our newsletter")]
         public bool ReceiveNewsletter { get; set; }
-
-        [Display(Name = "Do you agree with the terms and conditions?")]
-        public bool TermsAndConditions { get; set; }
 
         [DataType(DataType.Text)]
         [Display(Name = "First Name")]

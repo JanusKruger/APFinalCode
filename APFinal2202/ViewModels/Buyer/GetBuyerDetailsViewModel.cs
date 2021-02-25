@@ -24,12 +24,8 @@ namespace APFinal2202.ViewModels.Buyer
         public string NationalIdentificationNumber { get; set; }
 
         [DataType(DataType.Text)]
-        [Display(Name = "Do you want to receive our newsletter?")]
+        [Display(Name = "Your choice for receiving our newsletter")]
         public bool ReceiveNewsletter { get; set; }
-
-        [DataType(DataType.Text)]
-        [Display(Name = "Do you agree with the terms and conditions?")]
-        public bool TermsAndConditions { get; set; }
 
         [DataType(DataType.Text)]
         [Display(Name = "First Name")]

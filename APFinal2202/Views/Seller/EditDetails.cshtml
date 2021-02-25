@@ -36,26 +36,6 @@
                             @Html.ValidationMessageFor(m => m.SellerType)
                         </div>
                     </div>
-                    <div class="row form-group">
-                        @Html.LabelFor(m => m.NationalIdentificationNumber, new { @class = "col-md-2 control-label" })
-                        <div class="col-md-8">
-                            @Html.EditorFor(m => m.NationalIdentificationNumber, new { @class = "form-control" })
-                        </div>
-                    </div>
-                    <div class="row form-group">
-                        <div class="checkbox">
-                            <label>
-                                @Html.CheckBoxFor(m => m.ReceiveNewsletter, new { type = "checkbox" })
-                                @Html.EditorFor(m => m.ReceiveNewsletter)
-                            </label>
-                        </div>
-                        <div class="checkbox">
-                            <label>
-                                @Html.CheckBoxFor(m => m.TermsAndConditions, new { type = "checkbox" })
-                                @Html.LabelFor(m => m.TermsAndConditions)
-                            </label>
-                        </div>
-                    </div>
                 </div>
             </div>
             <div id="address" class="tab-pane">

@@ -22,10 +22,12 @@ namespace APFinal2202.Services
                 Email = model.Email,
                 FirstName = model.FirstName,
                 LastName = model.LastName,
+                NationalIdentificationNumber = model.NationalIdentificationNumber,
+                UserName = model.Username,
                 PasswordHash = model.Password,
                 PhoneNumber = model.PhoneNumber,
                 Role = model.Role.TrimSpaces(),
-                UserName = model.Email
+                ReceiveNewsletter = model.ReceiveNewsletter
             };
 
             return user;
@@ -39,9 +41,6 @@ namespace APFinal2202.Services
                 Signature = seller.Signature,
                 ApprovalStatus = seller.ApprovalStatus,
                 SellerType = seller.SellerType,
-                NationalIdentificationNumber = seller.NationalIdentificationNumber,
-                ReceiveNewsletter = seller.ReceiveNewsletter,
-                TermsAndConditions = seller.TermsAndConditions,
                 FirstName = user.FirstName,
                 LastName = user.LastName,
                 Username = user.UserName,
@@ -69,9 +68,6 @@ namespace APFinal2202.Services
                 Signature = buyer.Signature,
                 ApprovalStatus = buyer.ApprovalStatus,
                 SellerType = buyer.BuyerType,
-                NationalIdentificationNumber = buyer.NationalIdentificationNumber,
-                ReceiveNewsletter = buyer.ReceiveNewsletter,
-                TermsAndConditions = buyer.TermsAndConditions,
                 FirstName = user.FirstName,
                 LastName = user.LastName,
                 Username = user.UserName,
@@ -115,9 +111,6 @@ namespace APFinal2202.Services
                 Signature = model.Signature,
                 ApprovalStatus = model.ApprovalStatus,
                 SellerType = model.SellerType,
-                NationalIdentificationNumber = model.NationalIdentificationNumber,
-                ReceiveNewsletter = model.ReceiveNewsletter,
-                TermsAndConditions = model.TermsAndConditions,
                 UserId = userId,
                 AddressId = address.Id,
                 MultimediaId = multimedia.Id
@@ -150,9 +143,6 @@ namespace APFinal2202.Services
                 Signature = model.Signature,
                 ApprovalStatus = model.ApprovalStatus,
                 BuyerType = model.BuyerType.GetName<BuyerType>(),
-                NationalIdentificationNumber = model.NationalIdentificationNumber,
-                ReceiveNewsletter = model.ReceiveNewsletter,
-                TermsAndConditions = model.TermsAndConditions,
                 UserId = userId,
                 AddressId = address.Id,
                 MultimediaId = multimedia.Id
