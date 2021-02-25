@@ -14,7 +14,7 @@ namespace APFinal2202.ViewModels.Account
         [Display(Name = "Password")]
         public string Password { get; set; }
 
-        [Display(Name = "Remember me?")]
+        [Display(Name = "Keep me signed in")]
         public bool RememberMe { get; set; }
     }
 }

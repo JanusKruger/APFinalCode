@@ -1,60 +1,85 @@
-﻿@using APFinal2202.Models
-@model APFinal2202.ViewModels.Account.LoginViewModel
-@{
-    ViewBag.Title = "Log in";
-}
+﻿@model APFinal2202.ViewModels.Account.LoginViewModel
 
-<h2>@ViewBag.Title.</h2>
-<div class="row">
-    <div class="col-md-12">
-        <section id="loginForm">
-            @using (Html.BeginForm("Login", "Account", new { ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
-            {
-                @Html.AntiForgeryToken()
-                <hr />
-                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                <div class="form-group">
-                    @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label white" })
-                    <div class="col-md-10">
-                        @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
-                        @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+<main>
+    <div class="px-3">
+        <div class="theme-container">
+            <div class="row center-xs middle-xs my-5">
+                <div class="mdc-card p-3 p-relative mw-500px">
+                    <div class="column center-xs middle-xs text-center">
+                        <h1 class="uppercase">Sign In</h1>
+                        <a href="@Url.Action("Register", "Account")" class="mdc-button mdc-ripple-surface mdc-ripple-surface--accent accent-color normal w-100">
+                            Don't have an account? Sign up now!
+                        </a>
                     </div>
-                </div>
-                <div class="form-group">
-                    @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label white" })
-                    <div class="col-md-10">
-                        @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
-                        @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-md-offset-2 col-md-10">
-                        <div class="checkbox">
-                            @Html.CheckBoxFor(m => m.RememberMe)
-                            @Html.LabelFor(m => m.RememberMe, new { @class = "white" })
+                    @using (@Html.BeginForm("Login", "Account", new { @ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                    {
+                        @Html.AntiForgeryToken()
+                        <hr />
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        <div class="mdc-text-field mdc-text-field--outlined mdc-text-field--with-leading-icon w-100 mt-3 custom-field ">
+                            <i class="material-icons mdc-text-field__icon text-muted">person</i>
+                            @Html.TextBoxFor(m => m.Email, new { @class = "mdc-text-field__input" })
+                            @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                            <div class="mdc-notched-outline">
+                                <div class="mdc-notched-outline__leading"></div>
+                                <div class="mdc-notched-outline__notch">
+                                    @Html.LabelFor(m => m.Email, "", new { @class = "mdc-floating-label" })
+                                </div>
+                                <div class="mdc-notched-outline__trailing"></div>
+                            </div>
                         </div>
+                        <div class="mdc-text-field mdc-text-field--outlined mdc-text-field--with-leading-icon mdc-text-field--with-trailing-icon w-100 custom-field mt-4 custom-field">
+                            <i class="material-icons mdc-text-field__icon text-muted">lock</i>
+                            <i class="material-icons mdc-text-field__icon text-muted" tabindex="1" id="password-toggle">visibility_off</i>
+                            @Html.PasswordFor(m => m.Password, new { @class = "mdc-text-field__input" })
+                            @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                            <div class="mdc-notched-outline">
+                                <div class="mdc-notched-outline__leading"></div>
+                                <div class="mdc-notched-outline__notch">
+                                    @Html.LabelFor(m => m.Password, new { @class = "mdc-floating-label" })
+                                </div>
+                                <div class="mdc-notched-outline__trailing"></div>
+                            </div>
+                        </div>
+                        <div class="mdc-form-field mt-3 w-100">
+                            <div class="mdc-checkbox">
+                                @Html.CheckBoxFor(m => m.RememberMe, new { @class = "mdc-checkbox__native-control", id = "keep" })
+                                <div class="mdc-checkbox__background">
+                                    <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                        <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
+                                    </svg>
+                                    <div class="mdc-checkbox__mixedmark"></div>
+                                </div>
+                                <div class="mdc-checkbox__ripple"></div>
+                            </div>
+                            @Html.LabelFor(m => m.RememberMe, new { @class = "text-muted fw-500" })
+                        </div>
+                        <div class="text-center mt-2">
+                            <button class="mdc-button mdc-button--raised bg-accent" type="submit">
+                                <span class="mdc-button__ripple"></span>
+                                <span class="mdc-button__label">Sign to My Account</span>
+                            </button>
+                        </div>
+                    }
+                    <div class="row end-xs middle-xs">
+                        <a href="@Url.Action("Login", "Account")" class="mdc-button normal">
+                            <span class="mdc-button__ripple"></span>
+                            <i class="material-icons mdc-button__icon">vpn_key</i>
+                            <span class="mdc-button__label">Register as a new user</span>
+                        </a>
+                    </div>
+                    <div class="row end-xs middle-xs">
+                        <a href="@Url.Action("ForgotPassword", "Account")" class="mdc-button normal">
+                            <span class="mdc-button__ripple"></span>
+                            <i class="material-icons mdc-button__icon">vpn_key</i>
+                            <span class="mdc-button__label">Reset Password</span>
+                        </a>
                     </div>
                 </div>
-                <div class="form-group">
-                    <div class="col-md-offset-2 col-md-10">
-                        <input type="submit" value="Log in" class="btn btn-default" />
-                    </div>
-                </div>
-                <p>
-                    @Html.ActionLink("Register as a new user", "Register", null, new { @class = "white" })
-                </p>
-                <p>
-                    @Html.ActionLink("Forgot your password?", "ForgotPassword", null, new {@class="white"})
-                </p>
-            }
-        </section>
+            </div>
+        </div>
     </div>
-    @*<div class="col-md-4">
-            <section id="userDetailsInfo">
-                @Html.Partial("_UserDetailsInfoPartial")
-            </section>
-        </div>*@
-</div>
+</main>
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

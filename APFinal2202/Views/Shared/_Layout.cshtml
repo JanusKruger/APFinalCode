@@ -7,15 +7,15 @@
     <link rel="icon" type="image/x-icon" href="~/Content/img/white_A.png">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-   
+
     <link rel="stylesheet" href="~/content/css/libs/swiper.min.css">
     <link rel="stylesheet" href="~/content/css/libs/material-components-web.min.css">
     <link rel="stylesheet" href="~/content/css/style.css">
     <link rel="stylesheet" href="~/content/css/skins/blue.css">
     <link rel="stylesheet" href="~/content/css/responsive.css">
-  
 
-  
+
+
 </head>
 
 <!-- ======= Header/Navbar ======= -->
@@ -405,7 +405,7 @@
     <!-- ====== Page Footer End ====== -->
 
     <div id="back-to-top"><i class="material-icons">arrow_upward</i></div>
-    
+
     <script src="~/Content/lib/jquery/dist/jquery.js"></script>
     <script src="~/Content/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/Content/js/bootstrap.min.js"></script>
@@ -435,6 +435,8 @@
     <script src="~/content/js/scripts.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA1rF9bttCxRmsNdZYjW7FzIoyrul5jb-s&callback=initMap" async defer></script>
 
-
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/Scripts")
+    @RenderSection("scripts", false)
 </body>
 </html>
