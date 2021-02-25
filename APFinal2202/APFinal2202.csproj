@@ -193,7 +193,7 @@
     <Compile Include="Enums\PhotoType.cs" />
     <Compile Include="Enums\PropertyStatus.cs" />
     <Compile Include="Enums\PropertyType.cs" />
-    <Compile Include="Enums\RoleType.cs" />
+    <Compile Include="Enums\UserType.cs" />
     <Compile Include="Enums\RoomType.cs" />
     <Compile Include="Enums\SellerType.cs" />
     <Compile Include="Global.asax.cs">
@@ -619,7 +619,6 @@
     <Content Include="Views\Home\Faq.cshtml" />
     <Content Include="Views\Home\SubmitProperty.cshtml" />
     <Content Include="Views\Home\SellersGuide.cshtml" />
-    <Content Include="Views\Home\Register.cshtml" />
     <Content Include="Views\Account\ConfirmEmail.cshtml" />
     <Content Include="Views\Account\ForgotPassword.cshtml" />
     <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
@@ -658,6 +657,7 @@
     <Content Include="Views\Shared\UserPartialView.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Home\Privacy.cshtml" />
+    <Content Include="Views\Home\Register.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

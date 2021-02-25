@@ -1,8 +1,8 @@
 ﻿namespace APFinal2202.Enums
 {
-    public enum RoleType
+    public enum UserType
     {
-        Administrator,
+        Administrator = 1,
         Buyer,
         SellerOrAgent
     }

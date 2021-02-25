@@ -4,9 +4,6 @@ namespace APFinal2202.ViewModels.Account
 {
     public class RegisterViewModel
     {
-        [ScaffoldColumn(false)]
-        public string Id { get; set; }
-
         [Required]
         [DataType(DataType.Text)]
         [Display(Name = "First Name")]
@@ -44,7 +41,7 @@ namespace APFinal2202.ViewModels.Account
         [Required]
         [DataType(DataType.Text)]
         [Display(Name = "User Type")]
-        public string Role { get; set; }
+        public string UserType { get; set; }
 
         [Required]
         [DataType(DataType.PhoneNumber)]

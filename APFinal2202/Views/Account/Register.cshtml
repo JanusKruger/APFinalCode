@@ -35,13 +35,18 @@
                                 <div class="mdc-notched-outline">
                                     <div class="mdc-notched-outline__leading"></div>
                                     <div class="mdc-notched-outline__notch">
-                                        @Html.LabelFor(m => m.Role, new { @class = "mdc-floating-label" })
+                                        @Html.LabelFor(m => m.UserType, new { @class = "mdc-floating-label" })
                                     </div>
                                     <div class="mdc-notched-outline__trailing"></div>
                                 </div>
                             </div>
                             <div class="mdc-select__menu mdc-menu mdc-menu-surface">
-                                @Html.DropDownListFor(m => m.Role, GetList<RoleType>(), "Select Role", new { @class = "mdc-list" })
+                                <select id="@Html.IdFor(m => m.UserType)" class="mdc-list" name="@Html.NameFor(m => m.UserType)">
+                                    @foreach (var option in GetList<UserType>())
+                                    {
+                                        <option class="mdc-list-item" value="@option.Value" @(option.Selected ? "class=\"mdc-list-item mdc-list-item--selected\"" : string.Empty)>@option.Text</option>
+                                    }
+                                </select>
                             </div>
                         </div>
                         <div class="mdc-text-field mdc-text-field--outlined mdc-text-field--with-leading-icon w-100 mt-3 custom-field ">

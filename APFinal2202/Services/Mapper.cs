@@ -26,7 +26,7 @@ namespace APFinal2202.Services
                 UserName = model.Username,
                 PasswordHash = model.Password,
                 PhoneNumber = model.PhoneNumber,
-                Role = model.Role.TrimSpaces(),
+                Role = model.UserType.TrimSpaces(),
                 ReceiveNewsletter = model.ReceiveNewsletter
             };
 
