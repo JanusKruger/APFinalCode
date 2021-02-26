@@ -8,6 +8,7 @@ using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Policy;
 using System.Threading.Tasks;
 using System.Web.Mvc;
 
@@ -64,29 +65,46 @@ namespace APFinal2202.Controllers
             {
                 foreach (var httpPostedFileBase in model.PropertyMultimedia)
                 {
-                    var multimedia = new Multimedia
+                    var photo = new Multimedia
                     {
                         FileName = httpPostedFileBase.FileName,
                         Content = httpPostedFileBase.SetContent(),
-                        PhotoType = Enum.GetName(typeof(PhotoType), PhotoType.PropertyPhoto)
+                        Link = new Url(model.Link),
+                        Type = Enum.GetName(typeof(MultimediaType), MultimediaType.PropertyPhoto)
                     };
 
-                    context.MultiMedias.Add(multimedia);
-
-                    property.MultimediaIds += $"{multimedia.Id};";
+                    context.MultiMedias.Add(photo);
+                    property.MultimediaIds += $"{photo.Id};";
                 }
             }
 
-            if (model.Blueprint != null)
+            if (model.Blueprint[0] != null)
             {
-                var blueprint = new Multimedia
+                foreach (var httpPostedFileBase in model.Blueprint)
                 {
-                    FileName = model.Blueprint.FileName,
-                    Content = model.Blueprint.SetContent(),
-                    PhotoType = Enum.GetName(typeof(PhotoType), PhotoType.BlueprintPhoto)
+                    var blueprint = new Multimedia
+                    {
+                        FileName = httpPostedFileBase.FileName,
+                        Content = httpPostedFileBase.SetContent(),
+                        Type = Enum.GetName(typeof(MultimediaType), MultimediaType.BlueprintPhoto)
+                    };
+
+                    context.MultiMedias.Add(blueprint);
+                    property.MultimediaIds += $"{blueprint.Id}";
+                }
+            }
+
+            if (model.Link != null)
+            {
+                var video = new Multimedia
+                {
+                    FileName = model.FileName,
+                    Type = Enum.GetName(typeof(MultimediaType), MultimediaType.PropertyVideo),
+                    Link = new Url(model.Link)
                 };
-                context.MultiMedias.Add(blueprint);
-                property.MultimediaIds += $"{blueprint.Id}";
+
+                context.MultiMedias.Add(video);
+                property.MultimediaIds += $"{video.Id}";
             }
 
 

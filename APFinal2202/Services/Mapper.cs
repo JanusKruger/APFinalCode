@@ -53,7 +53,7 @@ namespace APFinal2202.Services
                 Province = address.Province,
                 PostalCode = address.PostalCode,
                 Country = address.Country,
-                PhotoType = multimedia.PhotoType.Humanize(),
+                PhotoType = multimedia.Type.Humanize(),
                 FileName = multimedia.FileName.RemoveExtension(),
                 Image = multimedia.Content.GetContent()
             };
@@ -80,7 +80,7 @@ namespace APFinal2202.Services
                 Province = address.Province,
                 PostalCode = address.PostalCode,
                 Country = address.Country,
-                PhotoType = multimedia.PhotoType.Humanize(),
+                PhotoType = multimedia.Type.Humanize(),
                 FileName = multimedia.FileName.RemoveExtension(),
                 Image = multimedia.Content.GetContent()
             };
@@ -93,7 +93,7 @@ namespace APFinal2202.Services
             {
                 FileName = model.ProfilePhoto.FileName,
                 Content = model.ProfilePhoto.SetContent(),
-                PhotoType = Enum.GetName(typeof(PhotoType), PhotoType.ProfilePhoto)
+                Type = Enum.GetName(typeof(MultimediaType), MultimediaType.ProfilePhoto)
             };
 
             var address = new Address
@@ -125,7 +125,7 @@ namespace APFinal2202.Services
             {
                 FileName = model.ProfilePhoto.FileName,
                 Content = model.ProfilePhoto.SetContent(),
-                PhotoType = Enum.GetName(typeof(PhotoType), PhotoType.ProfilePhoto)
+                Type = Enum.GetName(typeof(MultimediaType), MultimediaType.ProfilePhoto)
             };
 
             var address = new Address
@@ -157,8 +157,8 @@ namespace APFinal2202.Services
             {
                 AddressLine1 = model.AddressLine1,
                 AddressLine2 = model.AddressLine2,
-                Town = model.Town,
-                Province = model.Province,
+                Town = model.City,
+                Province = model.Suburb,
                 PostalCode = model.PostalCode,
                 Country = model.Country
             };
@@ -189,7 +189,10 @@ namespace APFinal2202.Services
 
             var features = new PropertyFeature
             {
+                AirConditioning = model.AirConditioning,
+                Balcony = model.Balcony,
                 Borehole = model.Borehole,
+                BuiltInBraai = model.BuiltInBraai,
                 BuiltInCupboards = model.BuiltInCupboards,
                 Carpets = model.Carpets,
                 Carport = model.Carport,
@@ -199,6 +202,7 @@ namespace APFinal2202.Services
                 FiberInternet = model.FiberInternet,
                 Garage = model.Garage,
                 Garden = model.Garden,
+                PetFriendly = model.PetFriendly,
                 SolarPower = model.SolarPower,
                 SwimmingPool = model.SwimmingPool,
                 TiledFloors = model.TiledFloors,
@@ -262,7 +266,7 @@ namespace APFinal2202.Services
                 foreach (var singleItem in multimedia.Where(singleItem => singleItem != null))
                 {
                     item.FileName.Add(singleItem.FileName.RemoveExtension());
-                    item.PhotoType.Add(singleItem.PhotoType.Humanize());
+                    item.PhotoType.Add(singleItem.Type.Humanize());
                     item.Image.Add(singleItem.Content.GetContent());
                 }
 

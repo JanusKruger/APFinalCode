@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using System.Security.Policy;
 
 namespace APFinal2202.Models
 {
@@ -15,7 +16,9 @@ namespace APFinal2202.Models
 
         public string FileName { get; set; }
 
-        public string PhotoType { get; set; }
+        public Url Link { get; set; }
+
+        public string Type { get; set; }
 
         public byte[] Content { get; set; }
     }

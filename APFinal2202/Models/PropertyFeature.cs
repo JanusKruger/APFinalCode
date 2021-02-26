@@ -11,7 +11,13 @@ namespace APFinal2202.Models
 
         public string Id { get; set; }
 
+        public bool AirConditioning { get; set; }
+
+        public bool Balcony { get; set; }
+
         public bool Borehole { get; set; }
+
+        public bool BuiltInBraai { get; set; }
 
         public bool BuiltInCupboards { get; set; }
 
@@ -30,6 +36,8 @@ namespace APFinal2202.Models
         public bool Garage { get; set; }
 
         public bool Garden { get; set; }
+
+        public bool PetFriendly { get; set; }
 
         public bool SolarPower { get; set; }
 

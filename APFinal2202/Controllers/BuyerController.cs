@@ -30,6 +30,11 @@ namespace APFinal2202.Controllers
 
         }
 
+        public ActionResult BuyersGuide()
+        {
+            return View();
+        }
+
         public ActionResult SetDetails()
         {
             return View();
@@ -96,11 +101,6 @@ namespace APFinal2202.Controllers
             var user = context.Users.FirstOrDefault(it => it.Id == userId);
             var buyer = context.Buyers.FirstOrDefault(it => it.UserId == user.Id);
             return buyer;
-        }
-
-        public ActionResult BuyerGuide()
-        {
-            throw new NotImplementedException();
         }
     }
 }

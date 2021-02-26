@@ -97,9 +97,9 @@ namespace APFinal2202.Controllers
             return seller;
         }
 
-        public ActionResult SellerGuide()
+        public ActionResult SellersGuide()
         {
-            throw new NotImplementedException();
+            return View();
         }
     }
 }
