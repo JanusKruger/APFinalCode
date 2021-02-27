@@ -18,7 +18,6 @@ namespace APFinal2202.ViewModels.SellerOrAgent
 
         [Required]
         [DataType(DataType.Text)]
-        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 5)]
         [Display(Name = "Seller Type")]
         public string SellerType { get; set; }
 

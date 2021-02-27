@@ -114,3 +114,4 @@ C:\Users\GabyM\Documents\GitHub\Upwork\Janus Kruger\APFinalCode\APFinal2202\obj\
 C:\Users\GabyM\Documents\GitHub\Upwork\Janus Kruger\APFinalCode\APFinal2202\obj\Debug\APFinal2202.csproj.CopyComplete
 C:\Users\GabyM\Documents\GitHub\Upwork\Janus Kruger\APFinalCode\APFinal2202\obj\Debug\APFinal2202.dll
 C:\Users\GabyM\Documents\GitHub\Upwork\Janus Kruger\APFinalCode\APFinal2202\obj\Debug\APFinal2202.pdb
+C:\Users\GabyM\Documents\GitHub\Upwork\Janus Kruger\APFinalCode\APFinal2202\obj\Debug\APFinal2202.csprojAssemblyReference.cache

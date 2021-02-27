@@ -130,12 +130,12 @@
                                     </div>
                                 </div>
                                 <div class="mdc-select__menu mdc-menu mdc-menu-surface">
-                                    <select id="@Html.IdFor(m => m.PropertyType)" class="mdc-list" name="@Html.NameFor(m => m.PropertyType)">
+                                    <ul id="@Html.IdFor(m => m.PropertyType)" class="mdc-list" name="@Html.NameFor(m => m.PropertyType)">
                                         @foreach (var option in GetList<PropertyType>())
                                         {
-                                            <option class="mdc-list-item" value="@option.Value" @(option.Selected ? "class=\"mdc-list-item mdc-list-item--selected\"" : string.Empty)>@option.Text</option>
+                                            <li class="mdc-list-item" data-value="@option.Value" @(option.Selected ? "class=\"mdc-list-item mdc-list-item--selected\"" : string.Empty)>@option.Text</li>
                                         }
-                                    </select>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
@@ -153,12 +153,12 @@
                                     </div>
                                 </div>
                                 <div class="mdc-select__menu mdc-menu mdc-menu-surface">
-                                    <select id="@Html.IdFor(m => m.PropertyStatus)" class="mdc-list" name="@Html.NameFor(m => m.PropertyStatus)">
+                                    <ul id="@Html.IdFor(m => m.PropertyStatus)" class="mdc-list" name="@Html.NameFor(m => m.PropertyStatus)">
                                         @foreach (var option in GetList<PropertyStatus>())
                                         {
-                                            <option class="mdc-list-item" value="@option.Value" @(option.Selected ? "class=\"mdc-list-item mdc-list-item--selected\"" : string.Empty)>@option.Text</option>
+                                            <li class="mdc-list-item" data-value="@option.Value" @(option.Selected ? "class=\"mdc-list-item mdc-list-item--selected\"" : string.Empty)>@option.Text</li>
                                         }
-                                    </select>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
