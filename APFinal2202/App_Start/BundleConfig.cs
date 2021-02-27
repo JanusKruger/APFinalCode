@@ -1,4 +1,5 @@
-﻿using System.Web.Optimization;
+﻿using APFinal2202.Services;
+using System.Web.Optimization;
 
 namespace APFinal2202
 {
@@ -7,26 +8,35 @@ namespace APFinal2202
         // For more information on bundling, visit https://go.microsoft.com/fwlink/?LinkId=301862
         public static void RegisterBundles(BundleCollection bundles)
         {
-            bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                        "~/Scripts/jquery-{version}.js"));
+            var scriptBundle = new ScriptBundle("~/bundles/Scripts")
+                .Include("~/Scripts/jquery-{version}.js")
+                .Include("~/Scripts/jquery.validate*")
+                .Include("~/Scripts/bootstrap.js")
+                .Include("~/Scripts/dateTimePicker/jquery.datetimepicker.full.js")
+                .Include("~/Scripts/dateTimePicker/jquery.datetimepicker.js")
+                .Include("~/Scripts/libs/material-components-web.min.js")
+                .Include("~/Scripts/libs/scripts.js")
+                .Include("~/Scripts/libs/site.js")
+                .Include("~/Scripts/libs/swiper.min.js");
+            scriptBundle.Orderer = new AsIsBundleOrdered();
+            bundles.Add(scriptBundle);
 
-            bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
-                        "~/Scripts/jquery.validate*"));
+            bundles.Add(new ScriptBundle("~/bundles/modernizr")
+                .Include("~/Scripts/modernizr-*"));
 
-            // Use the development version of Modernizr to develop with and learn from. Then, when you're
-            // ready for production, use the build tool at https://modernizr.com to pick only the tests you need.
-            bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
-                        "~/Scripts/modernizr-*"));
+            var styleBundle = new StyleBundle("~/bundles/css")
+                .Include("~/Content/css/bootstrap.min.css")
+                .Include("~/Content/css/site.css")
+                .Include("~/Content/bootstrap-theme.css")
+                .Include("~/Content/css/libs/swiper.min.css")
+                .Include("~/Content/css/libs/material-components-web.min.css")
+                .Include("~/Content/css/style.css")
+                .Include("~/Content/css/skins/blue.css")
+                .Include("~/Content/css/responsive.css");
+            styleBundle.Orderer = new AsIsBundleOrdered();
+            bundles.Add(styleBundle);
 
-            bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
-                      "~/Scripts/bootstrap.js",
-                      "~/Scripts/dateTimePicker/jquery.datetimepicker.full.js",
-                      "~/Scripts/dateTimePicker/jquery.datetimepicker.js"));
-
-            bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
-                      "~/Content/dateTimePicker/jquery.datetimepicker.css",
-                      "~/Content/site.css"));
+            BundleTable.EnableOptimizations = true;
         }
     }
 }
