@@ -23,7 +23,7 @@ namespace APFinal2202.Services
                 FirstName = model.FirstName,
                 LastName = model.LastName,
                 NationalIdentificationNumber = model.NationalIdentificationNumber,
-                UserName = model.Username,
+                UserName = model.Email,
                 PasswordHash = model.Password,
                 PhoneNumber = model.PhoneNumber,
                 Role = model.UserType.TrimSpaces(),

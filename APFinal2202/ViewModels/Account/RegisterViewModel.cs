@@ -49,12 +49,6 @@ namespace APFinal2202.ViewModels.Account
         [Display(Name = "Phone Number")]
         public string PhoneNumber { get; set; }
 
-        [Required]
-        [DataType(DataType.Text)]
-        [Display(Name = "Username")]
-        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 3)]
-        public string Username { get; set; }
-
         [Display(Name = "Do you want to receive our newsletter?")]
         public bool ReceiveNewsletter { get; set; }
     }

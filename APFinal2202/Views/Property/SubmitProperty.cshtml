@@ -17,663 +17,662 @@
         <div class="theme-container">
             <div class="py-3">
                 <div class="mdc-card p-3">
-                    <div class="mdc-tab-bar-wrapper submit-property">
-                        @using (Html.BeginForm("SubmitProperty", "Property", FormMethod.Post, new { @class = "form-horizontal", role = "form", enctype = "multipart/form-data" }))
-                        {
-                            @Html.AntiForgeryToken()
-                            <hr />
-                            @Html.ValidationSummary("", new { @class = "text-danger" })
-                            <div class="mdc-tab-bar mb-3">
-                                <div class="mdc-tab-scroller">
-                                    <div class="mdc-tab-scroller__scroll-area">
-                                        <div class="mdc-tab-scroller__scroll-content">
-                                            <button class="mdc-tab mdc-tab--active" tabindex="0">
-                                                <span class="mdc-tab__content">
-                                                    <span class="mdc-tab__text-label">Basic</span>
-                                                </span>
-                                                <span class="mdc-tab-indicator mdc-tab-indicator--active">
-                                                    <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
-                                                </span>
-                                                <span class="mdc-tab__ripple"></span>
-                                            </button>
-                                            <button class="mdc-tab mdc-tab" tabindex="0">
-                                                <span class="mdc-tab__content">
-                                                    <span class="mdc-tab__text-label">Address</span>
-                                                </span>
-                                                <span class="mdc-tab-indicator mdc-tab-indicator">
-                                                    <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
-                                                </span>
-                                                <span class="mdc-tab__ripple"></span>
-                                            </button>
-                                            <button class="mdc-tab mdc-tab" tabindex="0">
-                                                <span class="mdc-tab__content">
-                                                    <span class="mdc-tab__text-label">Additional</span>
-                                                </span>
-                                                <span class="mdc-tab-indicator mdc-tab-indicator">
-                                                    <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
-                                                </span>
-                                                <span class="mdc-tab__ripple"></span>
-                                            </button>
-                                            <button class="mdc-tab mdc-tab" tabindex="0">
-                                                <span class="mdc-tab__content">
-                                                    <span class="mdc-tab__text-label">Media</span>
-                                                </span>
-                                                <span class="mdc-tab-indicator mdc-tab-indicator">
-                                                    <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
-                                                </span>
-                                                <span class="mdc-tab__ripple"></span>
-                                            </button>
-                                            <button class="mdc-tab mdc-tab" tabindex="0">
-                                                <span class="mdc-tab__content">
-                                                    <span class="mdc-tab__text-label">Confirmation</span>
-                                                </span>
-                                                <span class="mdc-tab-indicator mdc-tab-indicator">
-                                                    <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
-                                                </span>
-                                                <span class="mdc-tab__ripple"></span>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tab-content tab-content--active">
-                                <div class="col-xs-12 p-3">
-                                    <h1 class="fw-500 text-center">Basic</h1>
-                                </div>
-                                <div class="col-xs-12 p-2">
-                                    <div class="mdc-text-field mdc-text-field--outlined">
-                                        @Html.TextBoxFor(m => m.Title, new { @class = "mdc-text-field__input" })
-                                        <div class="mdc-notched-outline">
-                                            <div class="mdc-notched-outline__leading"></div>
-                                            <div class="mdc-notched-outline__notch">
-                                                @Html.LabelFor(m => m.Title, new { @class = "mdc-floating-label" })
-                                            </div>
-                                            <div class="mdc-notched-outline__trailing"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xs-12 p-2">
-                                    <div class="mdc-text-field mdc-text-field--outlined mdc-text-field--textarea">
-                                        @Html.TextAreaFor(m => m.Description, new { @class = "mdc-text-field__input", rows = "5" })
-                                        <textarea class="mdc-text-field__input" rows="5"></textarea>
-                                        <div class="mdc-notched-outline mdc-notched-outline--upgraded">
-                                            <div class="mdc-notched-outline__leading"></div>
-                                            <div class="mdc-notched-outline__notch">
-                                                @Html.LabelFor(m => m.Description, new { @class = "mdc-floating-label" })
-                                            </div>
-                                            <div class="mdc-notched-outline__trailing"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xs-12 col-sm-6 p-2">
-                                    <div class="mdc-text-field mdc-text-field--outlined">
-                                        @Html.TextBoxFor(m => m.Price, new { @class = "mdc-text-field__input" })
-                                        <div class="mdc-notched-outline">
-                                            <div class="mdc-notched-outline__leading"></div>
-                                            <div class="mdc-notched-outline__notch">
-                                                @Html.LabelFor(m => m.Price, new { @class = "mdc-floating-label" })
-                                            </div>
-                                            <div class="mdc-notched-outline__trailing"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xs-12 col-sm-6 p-2">
-                                    <div class="mdc-select mdc-select--outlined">
-                                        <div class="mdc-select__anchor">
-                                            <i class="mdc-select__dropdown-icon"></i>
-                                            <div class="mdc-select__selected-text"></div>
-                                            <div class="mdc-notched-outline">
-                                                <div class="mdc-notched-outline__leading"></div>
-                                                <div class="mdc-notched-outline__notch">
-                                                    @Html.LabelFor(m => m.PropertyType, new { @class = "mdc-floating-label" })
-                                                </div>
-                                                <div class="mdc-notched-outline__trailing"></div>
-                                            </div>
-                                        </div>
-                                        <div class="mdc-select__menu mdc-menu mdc-menu-surface">
-                                            <select id="@Html.IdFor(m => m.PropertyType)" class="mdc-list" name="@Html.NameFor(m => m.PropertyType)">
-                                                @foreach (var option in GetList<PropertyType>())
-                                                {
-                                                    <option class="mdc-list-item" value="@option.Value" @(option.Selected ? "class=\"mdc-list-item mdc-list-item--selected\"" : string.Empty)>@option.Text</option>
-                                                }
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xs-12 col-sm-6 p-2">
-                                    <div class="mdc-select mdc-select--outlined">
-                                        <div class="mdc-select__anchor">
-                                            <i class="mdc-select__dropdown-icon"></i>
-                                            <div class="mdc-select__selected-text"></div>
-                                            <div class="mdc-notched-outline">
-                                                <div class="mdc-notched-outline__leading"></div>
-                                                <div class="mdc-notched-outline__notch">
-                                                    @Html.LabelFor(m => m.PropertyStatus, new { @class = "mdc-floating-label" })
-                                                </div>
-                                                <div class="mdc-notched-outline__trailing"></div>
-                                            </div>
-                                        </div>
-                                        <div class="mdc-select__menu mdc-menu mdc-menu-surface">
-                                            <select id="@Html.IdFor(m => m.PropertyStatus)" class="mdc-list" name="@Html.NameFor(m => m.PropertyStatus)">
-                                                @foreach (var option in GetList<PropertyStatus>())
-                                                {
-                                                    <option class="mdc-list-item" value="@option.Value" @(option.Selected ? "class=\"mdc-list-item mdc-list-item--selected\"" : string.Empty)>@option.Text</option>
-                                                }
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xs-12 mt-2">
-                                    @Html.LabelFor(m => m.PropertyMultimedia, new { @class = "text-muted", @for = "propertyPhotos" })
-                                    <div id="property-images" class="dropzone needsclick">
-                                        @Html.TextBoxFor(m => m.PropertyMultimedia, new { @class = "dz-message needsclick text-muted", type = "file", multiple = "multiple", id = "propertyPhotos" })
-                                    </div>
-                                </div>
-                                <div class="col-xs-12 p-2 mt-3 end-xs">
-                                    <button class="mdc-button mdc-button--raised next-tab" type="button">
-                                        <span class="mdc-button__ripple"></span>
-                                        <span class="mdc-button__label">Next</span>
-                                        <i class="material-icons mdc-button__icon">navigate_next</i>
+                <div class="mdc-tab-bar-wrapper submit-property">
+                @using (Html.BeginForm("SubmitProperty", "Property", FormMethod.Post, new {@class = "form-horizontal", role = "form", enctype = "multipart/form-data"}))
+                {
+                    @Html.AntiForgeryToken()
+                    <hr/>
+                    @Html.ValidationSummary("", new {@class = "text-danger"})
+                    <div class="mdc-tab-bar mb-3">
+                        <div class="mdc-tab-scroller">
+                            <div class="mdc-tab-scroller__scroll-area">
+                                <div class="mdc-tab-scroller__scroll-content">
+                                    <button class="mdc-tab mdc-tab--active" tabindex="0">
+                                        <span class="mdc-tab__content">
+                                            <span class="mdc-tab__text-label">Basic</span>
+                                        </span>
+                                        <span class="mdc-tab-indicator mdc-tab-indicator--active">
+                                            <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
+                                        </span>
+                                        <span class="mdc-tab__ripple"></span>
+                                    </button>
+                                    <button class="mdc-tab mdc-tab" tabindex="0">
+                                        <span class="mdc-tab__content">
+                                            <span class="mdc-tab__text-label">Address</span>
+                                        </span>
+                                        <span class="mdc-tab-indicator mdc-tab-indicator">
+                                            <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
+                                        </span>
+                                        <span class="mdc-tab__ripple"></span>
+                                    </button>
+                                    <button class="mdc-tab mdc-tab" tabindex="0">
+                                        <span class="mdc-tab__content">
+                                            <span class="mdc-tab__text-label">Features</span>
+                                        </span>
+                                        <span class="mdc-tab-indicator mdc-tab-indicator">
+                                            <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
+                                        </span>
+                                        <span class="mdc-tab__ripple"></span>
+                                    </button>
+                                    <button class="mdc-tab mdc-tab" tabindex="0">
+                                        <span class="mdc-tab__content">
+                                            <span class="mdc-tab__text-label">Media</span>
+                                        </span>
+                                        <span class="mdc-tab-indicator mdc-tab-indicator">
+                                            <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
+                                        </span>
+                                        <span class="mdc-tab__ripple"></span>
+                                    </button>
+                                    <button class="mdc-tab mdc-tab" tabindex="0">
+                                        <span class="mdc-tab__content">
+                                            <span class="mdc-tab__text-label">Confirmation</span>
+                                        </span>
+                                        <span class="mdc-tab-indicator mdc-tab-indicator">
+                                            <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
+                                        </span>
+                                        <span class="mdc-tab__ripple"></span>
                                     </button>
                                 </div>
                             </div>
-                            <div class="tab-content">
-                                <div class="col-xs-12 p-3">
-                                    <h1 class="fw-500 text-center">Address</h1>
-                                </div>
-                                <div class="col-xs-12 p-2">
-                                    <div class="mdc-text-field mdc-text-field--outlined mdc-text-field--with-leading-icon">
-                                        <i class="material-icons mdc-text-field__icon text-muted">location_on</i>
-                                        @Html.TextBoxFor(m => m.AddressLine1, new { @class = "mdc-text-field__input" })
-                                        <div class="mdc-notched-outline">
-                                            <div class="mdc-notched-outline__leading"></div>
-                                            <div class="mdc-notched-outline__notch">
-                                                @Html.LabelFor(m => m.AddressLine1, new { @class = "mdc-floating-label" })
-                                            </div>
-                                            <div class="mdc-notched-outline__trailing"></div>
-                                        </div>
+                        </div>
+                    </div>
+                    <div class="tab-content tab-content--active">
+                        <div class="col-xs-12 p-3">
+                            <h1 class="fw-500 text-center">Basic</h1>
+                        </div>
+                        <div class="col-xs-12 p-2">
+                            <div class="mdc-text-field mdc-text-field--outlined">
+                                @Html.TextBoxFor(m => m.Title, new {@class = "mdc-text-field__input"})
+                                <div class="mdc-notched-outline">
+                                    <div class="mdc-notched-outline__leading"></div>
+                                    <div class="mdc-notched-outline__notch">
+                                        @Html.LabelFor(m => m.Title, new {@class = "mdc-floating-label"})
                                     </div>
-                                </div>
-                                <div class="col-xs-12 p-2">
-                                    <div class="mdc-text-field mdc-text-field--outlined mdc-text-field--with-leading-icon">
-                                        <i class="material-icons mdc-text-field__icon text-muted">location_on</i>
-                                        @Html.TextBoxFor(m => m.AddressLine2, new { @class = "mdc-text-field__input" })
-                                        <div class="mdc-notched-outline">
-                                            <div class="mdc-notched-outline__leading"></div>
-                                            <div class="mdc-notched-outline__notch">
-                                                @Html.LabelFor(m => m.AddressLine2, new { @class = "mdc-floating-label" })
-                                            </div>
-                                            <div class="mdc-notched-outline__trailing"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xs-12 p-2">
-                                    <div id="contact-map"></div>
-                                </div>
-                                <div class="col-xs-12 col-sm-6 p-2">
-                                    <div class="mdc-select mdc-select--outlined">
-                                        <div class="mdc-select__anchor">
-                                            <i class="mdc-select__dropdown-icon"></i>
-                                            <div class="mdc-select__selected-text"></div>
-                                            <div class="mdc-notched-outline">
-                                                <div class="mdc-notched-outline__leading"></div>
-                                                <div class="mdc-notched-outline__notch">
-                                                    @Html.LabelFor(m => m.City, new { @class = "mdc-floating-label" })
-                                                </div>
-                                                <div class="mdc-notched-outline__trailing"></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xs-12 col-sm-6 p-2">
-                                    <div class="mdc-text-field mdc-text-field--outlined">
-                                        @Html.TextBoxFor(m => m.PostalCode, new { @class = "mdc-text-field__input" })
-                                        <div class="mdc-notched-outline">
-                                            <div class="mdc-notched-outline__leading"></div>
-                                            <div class="mdc-notched-outline__notch">
-                                                @Html.LabelFor(m => m.PostalCode, new { @class = "mdc-floating-label" })
-                                            </div>
-                                            <div class="mdc-notched-outline__trailing"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xs-12 col-sm-6 p-2">
-                                    <div class="mdc-select mdc-select--outlined">
-                                        @Html.TextBoxFor(m => m.Suburb, new { @class = "form-control" })
-                                        <div class="mdc-notched-outline">
-                                            <div class="mdc-notched-outline__leading"></div>
-                                            <div class="mdc-notched-outline__notch">
-                                                @Html.LabelFor(m => m.Suburb, new { @class = "mdc-floating-label" })
-                                                <div class="mdc-notched-outline__trailing"></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xs-12 col-sm-6 p-2">
-                                    <div class="mdc-select mdc-select--outlined">
-                                        @Html.TextBoxFor(m => m.Country, new { @class = "form-control" })
-                                        <div class="mdc-notched-outline">
-                                            <div class="mdc-notched-outline__leading"></div>
-                                            <div class="mdc-notched-outline__notch">
-                                                @Html.LabelFor(m => m.Country, new { @class = "mdc-floating-label" })
-                                                <div class="mdc-notched-outline__trailing"></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xs-12 p-2 mt-3 row between-xs">
-                                    <button class="mdc-button mdc-button--raised prev-tab" type="button">
-                                        <span class="mdc-button__ripple"></span>
-                                        <i class="material-icons mdc-button__icon">navigate_before</i>
-                                        <span class="mdc-button__label">Back</span>
-                                    </button>
-                                    <button class="mdc-button mdc-button--raised next-tab" type="button">
-                                        <span class="mdc-button__ripple"></span>
-                                        <span class="mdc-button__label">Next</span>
-                                        <i class="material-icons mdc-button__icon">navigate_next</i>
-                                    </button>
+                                    <div class="mdc-notched-outline__trailing"></div>
                                 </div>
                             </div>
-                            <div class="tab-content">
-                                <div class="col-xs-12 p-3">
-                                    <h1 class="fw-500 text-center">Additional</h1>
-                                </div>
-                                <div class="col-xs-12 col-sm-6 p-2">
-                                    <div class="mdc-select mdc-select--outlined">
-                                        <div class="mdc-select__anchor">
-                                            <i class="mdc-select__dropdown-icon"></i>
-                                            <div class="mdc-select__selected-text"></div>
-                                            <div class="mdc-notched-outline">
-                                                <div class="mdc-notched-outline__leading"></div>
-                                                <div class="mdc-notched-outline__notch">
-                                                    @Html.LabelFor(m => m.Bedrooms, new { @class = "mdc-floating-label" })
-                                                </div>
-                                                <div class="mdc-notched-outline__trailing"></div>
-                                            </div>
-                                        </div>
-                                        <div class="mdc-select__menu mdc-menu mdc-menu-surface">
-                                            <select id="@Html.IdFor(m => m.Bedrooms)" class="mdc-list" name="@Html.NameFor(m => m.Bedrooms)">
-                                                @foreach (var option in GetList<RoomType>())
-                                                {
-                                                    <option class="mdc-list-item" value="@option.Value" @(option.Selected ? "class=\"mdc-list-item mdc-list-item--selected\"" : string.Empty)>@option.Text</option>
-                                                }
-                                            </select>
-                                        </div>
+                        </div>
+                        <div class="col-xs-12 p-2">
+                            <div class="mdc-text-field mdc-text-field--outlined mdc-text-field--textarea">
+                                @Html.TextAreaFor(m => m.Description, new {@class = "mdc-text-field__input", cols = "1", rows = "5"})
+                                <div class="mdc-notched-outline mdc-notched-outline--upgraded">
+                                    <div class="mdc-notched-outline__leading"></div>
+                                    <div class="mdc-notched-outline__notch">
+                                        @Html.LabelFor(m => m.Description, new {@class = "mdc-floating-label"})
                                     </div>
-                                </div>
-                                <div class="col-xs-12 col-sm-6 p-2">
-                                    <div class="mdc-select mdc-select--outlined">
-                                        <div class="mdc-select__anchor">
-                                            <i class="mdc-select__dropdown-icon"></i>
-                                            <div class="mdc-select__selected-text"></div>
-                                            <div class="mdc-notched-outline">
-                                                <div class="mdc-notched-outline__leading"></div>
-                                                <div class="mdc-notched-outline__notch">
-                                                    @Html.LabelFor(m => m.Bathrooms, new { @class = "mdc-floating-label" })
-                                                </div>
-                                                <div class="mdc-notched-outline__trailing"></div>
-                                            </div>
-                                        </div>
-                                        <div class="mdc-select__menu mdc-menu mdc-menu-surface">
-                                            <select id="@Html.IdFor(m => m.Bathrooms)" class="mdc-list" name="@Html.NameFor(m => m.Bathrooms)">
-                                                @foreach (var option in GetList<RoomType>())
-                                                {
-                                                    <option class="mdc-list-item" value="@option.Value" @(option.Selected ? "class=\"mdc-list-item mdc-list-item--selected\"" : string.Empty)>@option.Text</option>
-                                                }
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xs-12 col-sm-6 p-2">
-                                    <div class="mdc-text-field mdc-text-field--outlined">
-                                        @Html.TextBoxFor(m => m.FloorSize, new { @class = "mdc-text-field__input" })
-                                        <div class="mdc-notched-outline">
-                                            <div class="mdc-notched-outline__leading"></div>
-                                            <div class="mdc-notched-outline__notch">
-                                                @Html.LabelFor(m => m.FloorSize, new { @class = "mdc-floating-label" })
-                                            </div>
-                                            <div class="mdc-notched-outline__trailing"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xs-12 col-sm-6 p-2">
-                                    <div class="mdc-text-field mdc-text-field--outlined">
-                                        @Html.TextBoxFor(m => m.ErfSize, new { @class = "mdc-text-field__input" })
-                                        <div class="mdc-notched-outline">
-                                            <div class="mdc-notched-outline__leading"></div>
-                                            <div class="mdc-notched-outline__notch">
-                                                @Html.LabelFor(m => m.ErfSize, new { @class = "mdc-floating-label" })
-                                            </div>
-                                            <div class="mdc-notched-outline__trailing"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xs-12 col-sm-6 p-2">
-                                    <div class="mdc-text-field mdc-text-field--outlined">
-                                        @Html.TextBoxFor(m => m.MonthlyLevies, new { @class = "mdc-text-field__input" })
-                                        <div class="mdc-notched-outline">
-                                            <div class="mdc-notched-outline__leading"></div>
-                                            <div class="mdc-notched-outline__notch">
-                                                @Html.LabelFor(m => m.MonthlyLevies, new { @class = "mdc-floating-label" })
-                                            </div>
-                                            <div class="mdc-notched-outline__trailing"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xs-12 col-sm-6 p-2">
-                                    <div class="mdc-text-field mdc-text-field--outlined">
-                                        @Html.TextBoxFor(m => m.RatesAndTaxes, new { @class = "mdc-text-field__input" })
-                                        <div class="mdc-notched-outline">
-                                            <div class="mdc-notched-outline__leading"></div>
-                                            <div class="mdc-notched-outline__notch">
-                                                @Html.LabelFor(m => m.RatesAndTaxes, new { @class = "mdc-floating-label" })
-                                            </div>
-                                            <div class="mdc-notched-outline__trailing"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xs-12 col-sm-6 p-2">
-                                    <div class="mdc-text-field mdc-text-field--outlined">
-                                        @Html.TextBoxFor(m => m.SpecialLevies, new { @class = "mdc-text-field__input" })
-                                        <div class="mdc-notched-outline">
-                                            <div class="mdc-notched-outline__leading"></div>
-                                            <div class="mdc-notched-outline__notch">
-                                                @Html.LabelFor(m => m.SpecialLevies, new { @class = "mdc-floating-label" })
-                                            </div>
-                                            <div class="mdc-notched-outline__trailing"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xs-12 mb-2 p-0">
-                                    <p class="uppercase m-2 fw-500">Features</p>
-                                    <div class="features">
-                                        <div class="mdc-form-field">
-                                            <div class="mdc-checkbox">
-                                                @Html.CheckBoxFor(m => m.AirConditioning, new { type = "checkbox", @class = "mdc-checkbox__native-control", id = "air-conditioning" })
-                                                <div class="mdc-checkbox__background">
-                                                    <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
-                                                        <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
-                                                    </svg>
-                                                    <div class="mdc-checkbox__mixedmark"></div>
-                                                </div>
-                                                <div class="mdc-checkbox__ripple"></div>
-                                            </div>
-                                            @Html.LabelFor(m => m.AirConditioning, new { @for = "air-conditioning" })
-                                        </div>
-                                        <div class="mdc-form-field">
-                                            <div class="mdc-checkbox">
-                                                @Html.CheckBoxFor(m => m.Balcony, new { type = "checkbox", @class = "mdc-checkbox__native-control", id = "balcony" })
-                                                <div class="mdc-checkbox__background">
-                                                    <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
-                                                        <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
-                                                    </svg>
-                                                    <div class="mdc-checkbox__mixedmark"></div>
-                                                </div>
-                                                <div class="mdc-checkbox__ripple"></div>
-                                            </div>
-                                            @Html.LabelFor(m => m.Balcony, new { @for = "balcony" })
-                                        </div>
-                                        <div class="mdc-form-field">
-                                            <div class="mdc-checkbox">
-                                                @Html.CheckBoxFor(m => m.Borehole, new { type = "checkbox", @class = "mdc-checkbox__native-control", id = "borehole" })
-                                                <div class="mdc-checkbox__background">
-                                                    <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
-                                                        <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
-                                                    </svg>
-                                                    <div class="mdc-checkbox__mixedmark"></div>
-                                                </div>
-                                                <div class="mdc-checkbox__ripple"></div>
-                                            </div>
-                                            @Html.LabelFor(m => m.Borehole, new { @for = "borehole" })
-                                        </div>
-                                        <div class="mdc-form-field">
-                                            <div class="mdc-checkbox">
-                                                @Html.CheckBoxFor(m => m.BuiltInBraai, new { type = "checkbox", @class = "mdc-checkbox__native-control", id = "barbeque" })
-                                                <div class="mdc-checkbox__background">
-                                                    <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
-                                                        <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
-                                                    </svg>
-                                                    <div class="mdc-checkbox__mixedmark"></div>
-                                                </div>
-                                                <div class="mdc-checkbox__ripple"></div>
-                                            </div>
-                                            @Html.LabelFor(m => m.BuiltInBraai, new { @for = "barbeque" })
-                                        </div>
-                                        <div class="mdc-form-field">
-                                            <div class="mdc-checkbox">
-                                                @Html.CheckBoxFor(m => m.BuiltInCupboards, new { type = "checkbox", @class = "mdc-checkbox__native-control", id = "cupboards" })
-                                                <div class="mdc-checkbox__background">
-                                                    <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
-                                                        <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
-                                                    </svg>
-                                                    <div class="mdc-checkbox__mixedmark"></div>
-                                                </div>
-                                                <div class="mdc-checkbox__ripple"></div>
-                                            </div>
-                                            @Html.LabelFor(m => m.BuiltInCupboards, new { @for = "cupboards" })
-                                        </div>
-                                        <div class="mdc-form-field">
-                                            <div class="mdc-checkbox">
-                                                @Html.CheckBoxFor(m => m.Carpets, new { type = "checkbox", @class = "mdc-checkbox__native-control", id = "carpets" })
-                                                <div class="mdc-checkbox__background">
-                                                    <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
-                                                        <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
-                                                    </svg>
-                                                    <div class="mdc-checkbox__mixedmark"></div>
-                                                </div>
-                                                <div class="mdc-checkbox__ripple"></div>
-                                            </div>
-                                            @Html.LabelFor(m => m.Carpets, new { @for = "carpets" })
-                                        </div>
-                                        <div class="mdc-form-field">
-                                            <div class="mdc-checkbox">
-                                                @Html.CheckBoxFor(m => m.Carport, new { type = "checkbox", @class = "mdc-checkbox__native-control", id = "carport" })
-                                                <div class="mdc-checkbox__background">
-                                                    <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
-                                                        <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
-                                                    </svg>
-                                                    <div class="mdc-checkbox__mixedmark"></div>
-                                                </div>
-                                                <div class="mdc-checkbox__ripple"></div>
-                                            </div>
-                                            @Html.LabelFor(m => m.Carport, new { @for = "carport" })
-                                        </div>
-                                        <div class="mdc-form-field">
-                                            <div class="mdc-checkbox">
-                                                @Html.CheckBoxFor(m => m.Clubhouse, new { type = "checkbox", @class = "mdc-checkbox__native-control", id = "clubHouse" })
-                                                <div class="mdc-checkbox__background">
-                                                    <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
-                                                        <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
-                                                    </svg>
-                                                    <div class="mdc-checkbox__mixedmark"></div>
-                                                </div>
-                                                <div class="mdc-checkbox__ripple"></div>
-                                            </div>
-                                            @Html.LabelFor(m => m.Clubhouse, new { @for = "clubHouse" })
-                                        </div>
-                                        <div class="mdc-form-field">
-                                            <div class="mdc-checkbox">
-                                                @Html.CheckBoxFor(m => m.DomesticBathroom, new { type = "checkbox", @class = "mdc-checkbox__native-control", id = "domesticBathroom" })
-                                                <div class="mdc-checkbox__background">
-                                                    <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
-                                                        <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
-                                                    </svg>
-                                                    <div class="mdc-checkbox__mixedmark"></div>
-                                                </div>
-                                                <div class="mdc-checkbox__ripple"></div>
-                                            </div>
-                                            @Html.LabelFor(m => m.DomesticBathroom, new { @for = "domesticBathroom" })
-                                        </div>
-                                        <div class="mdc-form-field">
-                                            <div class="mdc-checkbox">
-                                                @Html.CheckBoxFor(m => m.DoubleGarage, new { type = "checkbox", @class = "mdc-checkbox__native-control", id = "doubleGarage" })
-                                                <div class="mdc-checkbox__background">
-                                                    <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
-                                                        <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
-                                                    </svg>
-                                                    <div class="mdc-checkbox__mixedmark"></div>
-                                                </div>
-                                                <div class="mdc-checkbox__ripple"></div>
-                                            </div>
-                                            @Html.LabelFor(m => m.DoubleGarage, new { @for = "doubleGarage" })
-                                        </div>
-                                        <div class="mdc-form-field">
-                                            <div class="mdc-checkbox">
-                                                @Html.CheckBoxFor(m => m.FiberInternet, new { type = "checkbox", @class = "mdc-checkbox__native-control", id = "fiberInternet" })
-                                                <div class="mdc-checkbox__background">
-                                                    <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
-                                                        <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
-                                                    </svg>
-                                                    <div class="mdc-checkbox__mixedmark"></div>
-                                                </div>
-                                                <div class="mdc-checkbox__ripple"></div>
-                                            </div>
-                                            @Html.LabelFor(m => m.FiberInternet, new { @for = "fiberInternet" })
-                                        </div>
-                                        <div class="mdc-form-field">
-                                            <div class="mdc-checkbox">
-                                                @Html.CheckBoxFor(m => m.Garden, new { type = "checkbox", @class = "mdc-checkbox__native-control", id = "garden" })
-                                                <div class="mdc-checkbox__background">
-                                                    <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
-                                                        <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
-                                                    </svg>
-                                                    <div class="mdc-checkbox__mixedmark"></div>
-                                                </div>
-                                                <div class="mdc-checkbox__ripple"></div>
-                                            </div>
-                                            @Html.LabelFor(m => m.Garden, new { @for = "garden" })
-                                        </div>
-                                        <div class="mdc-form-field">
-                                            <div class="mdc-checkbox">
-                                                @Html.CheckBoxFor(m => m.PetFriendly, new { type = "checkbox", @class = "mdc-checkbox__native-control", id = "petFriendly" })
-                                                <div class="mdc-checkbox__background">
-                                                    <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
-                                                        <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
-                                                    </svg>
-                                                    <div class="mdc-checkbox__mixedmark"></div>
-                                                </div>
-                                                <div class="mdc-checkbox__ripple"></div>
-                                            </div>
-                                            @Html.LabelFor(m => m.PetFriendly, new { @for = "petFriendly" })
-                                        </div>
-                                        <div class="mdc-form-field">
-                                            <div class="mdc-checkbox">
-                                                @Html.CheckBoxFor(m => m.SolarPower, new { type = "checkbox", @class = "mdc-checkbox__native-control", id = "solarPower" })
-                                                <div class="mdc-checkbox__background">
-                                                    <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
-                                                        <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
-                                                    </svg>
-                                                    <div class="mdc-checkbox__mixedmark"></div>
-                                                </div>
-                                                <div class="mdc-checkbox__ripple"></div>
-                                            </div>
-                                            @Html.LabelFor(m => m.SolarPower, new { @for = "solarPower" })
-                                        </div>
-                                        <div class="mdc-form-field">
-                                            <div class="mdc-checkbox">
-                                                @Html.CheckBoxFor(m => m.SwimmingPool, new { type = "checkbox", @class = "mdc-checkbox__native-control", id = "swimmingPool" })
-                                                <div class="mdc-checkbox__background">
-                                                    <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
-                                                        <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
-                                                    </svg>
-                                                    <div class="mdc-checkbox__mixedmark"></div>
-                                                </div>
-                                                <div class="mdc-checkbox__ripple"></div>
-                                            </div>
-                                            @Html.LabelFor(m => m.SwimmingPool, new { @for = "swimmingPool" })
-                                        </div>
-                                        <div class="mdc-form-field">
-                                            <div class="mdc-checkbox">
-                                                @Html.CheckBoxFor(m => m.TiledFloors, new { type = "checkbox", @class = "mdc-checkbox__native-control", id = "tiledFloor" })
-                                                <div class="mdc-checkbox__background">
-                                                    <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
-                                                        <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
-                                                    </svg>
-                                                    <div class="mdc-checkbox__mixedmark"></div>
-                                                </div>
-                                                <div class="mdc-checkbox__ripple"></div>
-                                            </div>
-                                            @Html.LabelFor(m => m.TiledFloors, new { @for = "tiledFloor" })
-                                        </div>
-                                        <div class="mdc-form-field">
-                                            <div class="mdc-checkbox">
-                                                @Html.CheckBoxFor(m => m.VisitorParking, new { type = "checkbox", @class = "mdc-checkbox__native-control", id = "visitorParking" })
-                                                <div class="mdc-checkbox__background">
-                                                    <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
-                                                        <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
-                                                    </svg>
-                                                    <div class="mdc-checkbox__mixedmark"></div>
-                                                </div>
-                                                <div class="mdc-checkbox__ripple"></div>
-                                            </div>
-                                            @Html.LabelFor(m => m.VisitorParking, new { @for = "visitorParking" })
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xs-12 p-2 mt-3 row between-xs">
-                                    <button class="mdc-button mdc-button--raised prev-tab" type="button">
-                                        <span class="mdc-button__ripple"></span>
-                                        <i class="material-icons mdc-button__icon">navigate_before</i>
-                                        <span class="mdc-button__label">Back</span>
-                                    </button>
-                                    <button class="mdc-button mdc-button--raised next-tab" type="button">
-                                        <span class="mdc-button__ripple"></span>
-                                        <span class="mdc-button__label">Next</span>
-                                        <i class="material-icons mdc-button__icon">navigate_next</i>
-                                    </button>
+                                    <div class="mdc-notched-outline__trailing"></div>
                                 </div>
                             </div>
-                            <div class="tab-content">
-                                <div class="col-xs-12 p-3">
-                                    <h1 class="fw-500 text-center">Media</h1>
-                                </div>
-                                <div class="col-xs-12 p-0 dynamic-steps">
-                                    <div class="row middle-xs my-3 px-2">
-                                        <p class="mb-0"><span class="uppercase fw-500">Videos</span><span class="text-muted mx-3">(video link to .mp4)</span></p>
-                                        <button class="mdc-icon-button material-icons primary-color add-step" type="button" data-template-name="videos">add_circle</button>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 p-2">
+                            <div class="mdc-text-field mdc-text-field--outlined">
+                                @Html.TextBoxFor(m => m.Price, new {@class = "mdc-text-field__input"})
+                                <div class="mdc-notched-outline">
+                                    <div class="mdc-notched-outline__leading"></div>
+                                    <div class="mdc-notched-outline__notch">
+                                        @Html.LabelFor(m => m.Price, new {@class = "mdc-floating-label"})
                                     </div>
-                                    <div class="steps">
-                                        <div class="step-section">
-                                            <div class="row middle-xs">
-                                                <div class="col-xs-1 text-center fw-500">
-                                                    <span class="num">1</span>
-                                                </div>
-                                                <div class="col-xs-10">
-                                                    <div class="row">
-                                                        <div class="col-xs-12 col-sm-5 p-2">
-                                                            <div class="mdc-text-field mdc-text-field--outlined">
-                                                                @Html.TextBoxFor(m => m.FileName, new { @class = "mdc-text-field__input", id = "propertyVideo" })
-                                                                <div class="mdc-notched-outline">
-                                                                    <div class="mdc-notched-outline__leading"></div>
-                                                                    <div class="mdc-notched-outline__notch">
-                                                                        @Html.LabelFor(m => m.FileName, new { @class = "mdc-floating-label", @for = "propertyVideo" })
-                                                                    </div>
-                                                                    <div class="mdc-notched-outline__trailing"></div>
-                                                                </div>
-                                                            </div>
+                                    <div class="mdc-notched-outline__trailing"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 p-2">
+                            <div class="mdc-select mdc-select--outlined">
+                                <div class="mdc-select__anchor">
+                                    <i class="mdc-select__dropdown-icon"></i>
+                                    <div class="mdc-select__selected-text"></div>
+                                    <div class="mdc-notched-outline">
+                                        <div class="mdc-notched-outline__leading"></div>
+                                        <div class="mdc-notched-outline__notch">
+                                            @Html.LabelFor(m => m.PropertyType, new {@class = "mdc-floating-label"})
+                                        </div>
+                                        <div class="mdc-notched-outline__trailing"></div>
+                                    </div>
+                                </div>
+                                <div class="mdc-select__menu mdc-menu mdc-menu-surface">
+                                    <select id="@Html.IdFor(m => m.PropertyType)" class="mdc-list" name="@Html.NameFor(m => m.PropertyType)">
+                                        @foreach (var option in GetList<PropertyType>())
+                                        {
+                                            <option class="mdc-list-item" value="@option.Value" @(option.Selected ? "class=\"mdc-list-item mdc-list-item--selected\"" : string.Empty)>@option.Text</option>
+                                        }
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 p-2">
+                            <div class="mdc-select mdc-select--outlined">
+                                <div class="mdc-select__anchor">
+                                    <i class="mdc-select__dropdown-icon"></i>
+                                    <div class="mdc-select__selected-text"></div>
+                                    <div class="mdc-notched-outline">
+                                        <div class="mdc-notched-outline__leading"></div>
+                                        <div class="mdc-notched-outline__notch">
+                                            @Html.LabelFor(m => m.PropertyStatus, new {@class = "mdc-floating-label"})
+                                        </div>
+                                        <div class="mdc-notched-outline__trailing"></div>
+                                    </div>
+                                </div>
+                                <div class="mdc-select__menu mdc-menu mdc-menu-surface">
+                                    <select id="@Html.IdFor(m => m.PropertyStatus)" class="mdc-list" name="@Html.NameFor(m => m.PropertyStatus)">
+                                        @foreach (var option in GetList<PropertyStatus>())
+                                        {
+                                            <option class="mdc-list-item" value="@option.Value" @(option.Selected ? "class=\"mdc-list-item mdc-list-item--selected\"" : string.Empty)>@option.Text</option>
+                                        }
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 mt-2">
+                            @Html.LabelFor(m => m.PropertyMultimedia, new {@class = "text-muted", @for = "propertyPhotos"})
+                            <div id="property-images" class="dropzone needsclick">
+                                @Html.TextBoxFor(m => m.PropertyMultimedia, new {@class = "dz-message needsclick text-muted", type = "file", multiple = "multiple", id = "propertyPhotos"})
+                            </div>
+                        </div>
+                        <div class="col-xs-12 p-2 mt-3 end-xs">
+                            <button class="mdc-button mdc-button--raised next-tab" type="button">
+                                <span class="mdc-button__ripple"></span>
+                                <span class="mdc-button__label">Next</span>
+                                <i class="material-icons mdc-button__icon">navigate_next</i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="tab-content">
+                        <div class="col-xs-12 p-3">
+                            <h1 class="fw-500 text-center">Address</h1>
+                        </div>
+                        <div class="col-xs-12 p-2">
+                            <div class="mdc-text-field mdc-text-field--outlined mdc-text-field--with-leading-icon">
+                                <i class="material-icons mdc-text-field__icon text-muted">location_on</i>
+                                @Html.TextBoxFor(m => m.AddressLine1, new {@class = "mdc-text-field__input"})
+                                <div class="mdc-notched-outline">
+                                    <div class="mdc-notched-outline__leading"></div>
+                                    <div class="mdc-notched-outline__notch">
+                                        @Html.LabelFor(m => m.AddressLine1, new {@class = "mdc-floating-label"})
+                                    </div>
+                                    <div class="mdc-notched-outline__trailing"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 p-2">
+                            <div class="mdc-text-field mdc-text-field--outlined mdc-text-field--with-leading-icon">
+                                <i class="material-icons mdc-text-field__icon text-muted">location_on</i>
+                                @Html.TextBoxFor(m => m.AddressLine2, new {@class = "mdc-text-field__input"})
+                                <div class="mdc-notched-outline">
+                                    <div class="mdc-notched-outline__leading"></div>
+                                    <div class="mdc-notched-outline__notch">
+                                        @Html.LabelFor(m => m.AddressLine2, new {@class = "mdc-floating-label"})
+                                    </div>
+                                    <div class="mdc-notched-outline__trailing"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 p-2">
+                            <div id="contact-map"></div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 p-2">
+                            <div class="mdc-select mdc-select--outlined">
+                                <div class="mdc-select__anchor">
+                                    <i class="mdc-select__dropdown-icon"></i>
+                                    <div class="mdc-select__selected-text"></div>
+                                    <div class="mdc-notched-outline">
+                                        <div class="mdc-notched-outline__leading"></div>
+                                        <div class="mdc-notched-outline__notch">
+                                            @Html.LabelFor(m => m.City, new {@class = "mdc-floating-label"})
+                                        </div>
+                                        <div class="mdc-notched-outline__trailing"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 p-2">
+                            <div class="mdc-text-field mdc-text-field--outlined">
+                                @Html.TextBoxFor(m => m.PostalCode, new {@class = "mdc-text-field__input"})
+                                <div class="mdc-notched-outline">
+                                    <div class="mdc-notched-outline__leading"></div>
+                                    <div class="mdc-notched-outline__notch">
+                                        @Html.LabelFor(m => m.PostalCode, new {@class = "mdc-floating-label"})
+                                    </div>
+                                    <div class="mdc-notched-outline__trailing"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 p-2">
+                            <div class="mdc-select mdc-select--outlined">
+                                @Html.TextBoxFor(m => m.Suburb, new {@class = "form-control"})
+                                <div class="mdc-notched-outline">
+                                    <div class="mdc-notched-outline__leading"></div>
+                                    <div class="mdc-notched-outline__notch">
+                                        @Html.LabelFor(m => m.Suburb, new {@class = "mdc-floating-label"})
+                                        <div class="mdc-notched-outline__trailing"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 p-2">
+                            <div class="mdc-select mdc-select--outlined">
+                                @Html.TextBoxFor(m => m.Country, new {@class = "form-control"})
+                                <div class="mdc-notched-outline">
+                                    <div class="mdc-notched-outline__leading"></div>
+                                    <div class="mdc-notched-outline__notch">
+                                        @Html.LabelFor(m => m.Country, new {@class = "mdc-floating-label"})
+                                        <div class="mdc-notched-outline__trailing"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 p-2 mt-3 row between-xs">
+                            <button class="mdc-button mdc-button--raised prev-tab" type="button">
+                                <span class="mdc-button__ripple"></span>
+                                <i class="material-icons mdc-button__icon">navigate_before</i>
+                                <span class="mdc-button__label">Back</span>
+                            </button>
+                            <button class="mdc-button mdc-button--raised next-tab" type="button">
+                                <span class="mdc-button__ripple"></span>
+                                <span class="mdc-button__label">Next</span>
+                                <i class="material-icons mdc-button__icon">navigate_next</i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="tab-content">
+                    <div class="col-xs-12 p-3">
+                        <h1 class="fw-500 text-center">Features</h1>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 p-2">
+                        <div class="mdc-select mdc-select--outlined">
+                            <div class="mdc-select__anchor">
+                                <i class="mdc-select__dropdown-icon"></i>
+                                <div class="mdc-select__selected-text"></div>
+                                <div class="mdc-notched-outline">
+                                    <div class="mdc-notched-outline__leading"></div>
+                                    <div class="mdc-notched-outline__notch">
+                                        @Html.LabelFor(m => m.Bedrooms, new {@class = "mdc-floating-label"})
+                                    </div>
+                                    <div class="mdc-notched-outline__trailing"></div>
+                                </div>
+                            </div>
+                            <div class="mdc-select__menu mdc-menu mdc-menu-surface">
+                                <select id="@Html.IdFor(m => m.Bedrooms)" class="mdc-list" name="@Html.NameFor(m => m.Bedrooms)">
+                                    @foreach (var option in GetList<RoomType>())
+                                    {
+                                        <option class="mdc-list-item" value="@option.Value" @(option.Selected ? "class=\"mdc-list-item mdc-list-item--selected\"" : string.Empty)>@option.Text</option>
+                                    }
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 p-2">
+                        <div class="mdc-select mdc-select--outlined">
+                            <div class="mdc-select__anchor">
+                                <i class="mdc-select__dropdown-icon"></i>
+                                <div class="mdc-select__selected-text"></div>
+                                <div class="mdc-notched-outline">
+                                    <div class="mdc-notched-outline__leading"></div>
+                                    <div class="mdc-notched-outline__notch">
+                                        @Html.LabelFor(m => m.Bathrooms, new {@class = "mdc-floating-label"})
+                                    </div>
+                                    <div class="mdc-notched-outline__trailing"></div>
+                                </div>
+                            </div>
+                            <div class="mdc-select__menu mdc-menu mdc-menu-surface">
+                                <select id="@Html.IdFor(m => m.Bathrooms)" class="mdc-list" name="@Html.NameFor(m => m.Bathrooms)">
+                                    @foreach (var option in GetList<RoomType>())
+                                    {
+                                        <option class="mdc-list-item" value="@option.Value" @(option.Selected ? "class=\"mdc-list-item mdc-list-item--selected\"" : string.Empty)>@option.Text</option>
+                                    }
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 p-2">
+                        <div class="mdc-text-field mdc-text-field--outlined">
+                            @Html.TextBoxFor(m => m.FloorSize, new {@class = "mdc-text-field__input"})
+                            <div class="mdc-notched-outline">
+                                <div class="mdc-notched-outline__leading"></div>
+                                <div class="mdc-notched-outline__notch">
+                                    @Html.LabelFor(m => m.FloorSize, new {@class = "mdc-floating-label"})
+                                </div>
+                                <div class="mdc-notched-outline__trailing"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 p-2">
+                        <div class="mdc-text-field mdc-text-field--outlined">
+                            @Html.TextBoxFor(m => m.ErfSize, new {@class = "mdc-text-field__input"})
+                            <div class="mdc-notched-outline">
+                                <div class="mdc-notched-outline__leading"></div>
+                                <div class="mdc-notched-outline__notch">
+                                    @Html.LabelFor(m => m.ErfSize, new {@class = "mdc-floating-label"})
+                                </div>
+                                <div class="mdc-notched-outline__trailing"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 p-2">
+                        <div class="mdc-text-field mdc-text-field--outlined">
+                            @Html.TextBoxFor(m => m.MonthlyLevies, new {@class = "mdc-text-field__input"})
+                            <div class="mdc-notched-outline">
+                                <div class="mdc-notched-outline__leading"></div>
+                                <div class="mdc-notched-outline__notch">
+                                    @Html.LabelFor(m => m.MonthlyLevies, new {@class = "mdc-floating-label"})
+                                </div>
+                                <div class="mdc-notched-outline__trailing"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 p-2">
+                        <div class="mdc-text-field mdc-text-field--outlined">
+                            @Html.TextBoxFor(m => m.RatesAndTaxes, new {@class = "mdc-text-field__input"})
+                            <div class="mdc-notched-outline">
+                                <div class="mdc-notched-outline__leading"></div>
+                                <div class="mdc-notched-outline__notch">
+                                    @Html.LabelFor(m => m.RatesAndTaxes, new {@class = "mdc-floating-label"})
+                                </div>
+                                <div class="mdc-notched-outline__trailing"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 p-2">
+                        <div class="mdc-text-field mdc-text-field--outlined">
+                            @Html.TextBoxFor(m => m.SpecialLevies, new {@class = "mdc-text-field__input"})
+                            <div class="mdc-notched-outline">
+                                <div class="mdc-notched-outline__leading"></div>
+                                <div class="mdc-notched-outline__notch">
+                                    @Html.LabelFor(m => m.SpecialLevies, new {@class = "mdc-floating-label"})
+                                </div>
+                                <div class="mdc-notched-outline__trailing"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 mb-2 p-0">
+                    <p class="uppercase m-2 fw-500">Features</p>
+                    <div class="features">
+                    <div class="mdc-form-field">
+                        <div class="mdc-checkbox">
+                            @Html.CheckBoxFor(m => m.AirConditioning, new {type = "checkbox", @class = "mdc-checkbox__native-control", id = "air-conditioning"})
+                            <div class="mdc-checkbox__background">
+                                <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                    <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+                                </svg>
+                                <div class="mdc-checkbox__mixedmark"></div>
+                            </div>
+                            <div class="mdc-checkbox__ripple"></div>
+                        </div>
+                        @Html.LabelFor(m => m.AirConditioning, new {@for = "air-conditioning"})
+                    </div>
+                    <div class="mdc-form-field">
+                        <div class="mdc-checkbox">
+                            @Html.CheckBoxFor(m => m.Balcony, new {type = "checkbox", @class = "mdc-checkbox__native-control", id = "balcony"})
+                            <div class="mdc-checkbox__background">
+                                <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                    <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+                                </svg>
+                                <div class="mdc-checkbox__mixedmark"></div>
+                            </div>
+                            <div class="mdc-checkbox__ripple"></div>
+                        </div>
+                        @Html.LabelFor(m => m.Balcony, new {@for = "balcony"})
+                    </div>
+                    <div class="mdc-form-field">
+                        <div class="mdc-checkbox">
+                            @Html.CheckBoxFor(m => m.Borehole, new {type = "checkbox", @class = "mdc-checkbox__native-control", id = "borehole"})
+                            <div class="mdc-checkbox__background">
+                                <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                    <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+                                </svg>
+                                <div class="mdc-checkbox__mixedmark"></div>
+                            </div>
+                            <div class="mdc-checkbox__ripple"></div>
+                        </div>
+                        @Html.LabelFor(m => m.Borehole, new {@for = "borehole"})
+                    </div>
+                    <div class="mdc-form-field">
+                        <div class="mdc-checkbox">
+                            @Html.CheckBoxFor(m => m.BuiltInBraai, new {type = "checkbox", @class = "mdc-checkbox__native-control", id = "barbeque"})
+                            <div class="mdc-checkbox__background">
+                                <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                    <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+                                </svg>
+                                <div class="mdc-checkbox__mixedmark"></div>
+                            </div>
+                            <div class="mdc-checkbox__ripple"></div>
+                        </div>
+                        @Html.LabelFor(m => m.BuiltInBraai, new {@for = "barbeque"})
+                    </div>
+                    <div class="mdc-form-field">
+                        <div class="mdc-checkbox">
+                            @Html.CheckBoxFor(m => m.BuiltInCupboards, new {type = "checkbox", @class = "mdc-checkbox__native-control", id = "cupboards"})
+                            <div class="mdc-checkbox__background">
+                                <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                    <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+                                </svg>
+                                <div class="mdc-checkbox__mixedmark"></div>
+                            </div>
+                            <div class="mdc-checkbox__ripple"></div>
+                        </div>
+                        @Html.LabelFor(m => m.BuiltInCupboards, new {@for = "cupboards"})
+                    </div>
+                    <div class="mdc-form-field">
+                        <div class="mdc-checkbox">
+                            @Html.CheckBoxFor(m => m.Carpets, new {type = "checkbox", @class = "mdc-checkbox__native-control", id = "carpets"})
+                            <div class="mdc-checkbox__background">
+                                <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                    <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+                                </svg>
+                                <div class="mdc-checkbox__mixedmark"></div>
+                            </div>
+                            <div class="mdc-checkbox__ripple"></div>
+                        </div>
+                        @Html.LabelFor(m => m.Carpets, new {@for = "carpets"})
+                    </div>
+                    <div class="mdc-form-field">
+                        <div class="mdc-checkbox">
+                            @Html.CheckBoxFor(m => m.Carport, new {type = "checkbox", @class = "mdc-checkbox__native-control", id = "carport"})
+                            <div class="mdc-checkbox__background">
+                                <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                    <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+                                </svg>
+                                <div class="mdc-checkbox__mixedmark"></div>
+                            </div>
+                            <div class="mdc-checkbox__ripple"></div>
+                        </div>
+                        @Html.LabelFor(m => m.Carport, new {@for = "carport"})
+                    </div>
+                    <div class="mdc-form-field">
+                        <div class="mdc-checkbox">
+                            @Html.CheckBoxFor(m => m.Clubhouse, new {type = "checkbox", @class = "mdc-checkbox__native-control", id = "clubHouse"})
+                            <div class="mdc-checkbox__background">
+                                <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                    <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+                                </svg>
+                                <div class="mdc-checkbox__mixedmark"></div>
+                            </div>
+                            <div class="mdc-checkbox__ripple"></div>
+                        </div>
+                        @Html.LabelFor(m => m.Clubhouse, new {@for = "clubHouse"})
+                    </div>
+                    <div class="mdc-form-field">
+                        <div class="mdc-checkbox">
+                            @Html.CheckBoxFor(m => m.DomesticBathroom, new {type = "checkbox", @class = "mdc-checkbox__native-control", id = "domesticBathroom"})
+                            <div class="mdc-checkbox__background">
+                                <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                    <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+                                </svg>
+                                <div class="mdc-checkbox__mixedmark"></div>
+                            </div>
+                            <div class="mdc-checkbox__ripple"></div>
+                        </div>
+                        @Html.LabelFor(m => m.DomesticBathroom, new {@for = "domesticBathroom"})
+                    </div>
+                    <div class="mdc-form-field">
+                        <div class="mdc-checkbox">
+                            @Html.CheckBoxFor(m => m.DoubleGarage, new {type = "checkbox", @class = "mdc-checkbox__native-control", id = "doubleGarage"})
+                            <div class="mdc-checkbox__background">
+                                <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                    <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+                                </svg>
+                                <div class="mdc-checkbox__mixedmark"></div>
+                            </div>
+                            <div class="mdc-checkbox__ripple"></div>
+                        </div>
+                        @Html.LabelFor(m => m.DoubleGarage, new {@for = "doubleGarage"})
+                    </div>
+                    <div class="mdc-form-field">
+                        <div class="mdc-checkbox">
+                            @Html.CheckBoxFor(m => m.FiberInternet, new {type = "checkbox", @class = "mdc-checkbox__native-control", id = "fiberInternet"})
+                            <div class="mdc-checkbox__background">
+                                <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                    <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+                                </svg>
+                                <div class="mdc-checkbox__mixedmark"></div>
+                            </div>
+                            <div class="mdc-checkbox__ripple"></div>
+                        </div>
+                        @Html.LabelFor(m => m.FiberInternet, new {@for = "fiberInternet"})
+                    </div>
+                    <div class="mdc-form-field">
+                        <div class="mdc-checkbox">
+                            @Html.CheckBoxFor(m => m.Garden, new {type = "checkbox", @class = "mdc-checkbox__native-control", id = "garden"})
+                            <div class="mdc-checkbox__background">
+                                <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                    <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+                                </svg>
+                                <div class="mdc-checkbox__mixedmark"></div>
+                            </div>
+                            <div class="mdc-checkbox__ripple"></div>
+                        </div>
+                        @Html.LabelFor(m => m.Garden, new {@for = "garden"})
+                    </div>
+                    <div class="mdc-form-field">
+                        <div class="mdc-checkbox">
+                            @Html.CheckBoxFor(m => m.PetFriendly, new {type = "checkbox", @class = "mdc-checkbox__native-control", id = "petFriendly"})
+                            <div class="mdc-checkbox__background">
+                                <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                    <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+                                </svg>
+                                <div class="mdc-checkbox__mixedmark"></div>
+                            </div>
+                            <div class="mdc-checkbox__ripple"></div>
+                        </div>
+                        @Html.LabelFor(m => m.PetFriendly, new {@for = "petFriendly"})
+                    </div>
+                    <div class="mdc-form-field">
+                        <div class="mdc-checkbox">
+                            @Html.CheckBoxFor(m => m.SolarPower, new {type = "checkbox", @class = "mdc-checkbox__native-control", id = "solarPower"})
+                            <div class="mdc-checkbox__background">
+                                <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                    <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+                                </svg>
+                                <div class="mdc-checkbox__mixedmark"></div>
+                            </div>
+                            <div class="mdc-checkbox__ripple"></div>
+                        </div>
+                        @Html.LabelFor(m => m.SolarPower, new {@for = "solarPower"})
+                    </div>
+                    <div class="mdc-form-field">
+                        <div class="mdc-checkbox">
+                            @Html.CheckBoxFor(m => m.SwimmingPool, new {type = "checkbox", @class = "mdc-checkbox__native-control", id = "swimmingPool"})
+                            <div class="mdc-checkbox__background">
+                                <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                    <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+                                </svg>
+                                <div class="mdc-checkbox__mixedmark"></div>
+                            </div>
+                            <div class="mdc-checkbox__ripple"></div>
+                        </div>
+                        @Html.LabelFor(m => m.SwimmingPool, new {@for = "swimmingPool"})
+                    </div>
+                    <div class="mdc-form-field">
+                        <div class="mdc-checkbox">
+                            @Html.CheckBoxFor(m => m.TiledFloors, new {type = "checkbox", @class = "mdc-checkbox__native-control", id = "tiledFloor"})
+                            <div class="mdc-checkbox__background">
+                                <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                    <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+                                </svg>
+                                <div class="mdc-checkbox__mixedmark"></div>
+                            </div>
+                            <div class="mdc-checkbox__ripple"></div>
+                        </div>
+                        @Html.LabelFor(m => m.TiledFloors, new {@for = "tiledFloor"})
+                    </div>
+                    <div class="mdc-form-field">
+                        <div class="mdc-checkbox">
+                            @Html.CheckBoxFor(m => m.VisitorParking, new {type = "checkbox", @class = "mdc-checkbox__native-control", id = "visitorParking"})
+                            <div class="mdc-checkbox__background">
+                                <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                    <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+                                </svg>
+                                <div class="mdc-checkbox__mixedmark"></div>
+                            </div>
+                            <div class="mdc-checkbox__ripple"></div>
+                        </div>
+                        @Html.LabelFor(m => m.VisitorParking, new {@for = "visitorParking"})
+                    </div>
+                    </div>
+                    </div>
+                    <div class="col-xs-12 p-2 mt-3 row between-xs">
+                        <button class="mdc-button mdc-button--raised prev-tab" type="button">
+                            <span class="mdc-button__ripple"></span>
+                            <i class="material-icons mdc-button__icon">navigate_before</i>
+                            <span class="mdc-button__label">Back</span>
+                        </button>
+                        <button class="mdc-button mdc-button--raised next-tab" type="button">
+                            <span class="mdc-button__ripple"></span>
+                            <span class="mdc-button__label">Next</span>
+                            <i class="material-icons mdc-button__icon">navigate_next</i>
+                        </button>
+                    </div>
+                    </div>
+                    <div class="tab-content">
+                    <div class="col-xs-12 p-3">
+                        <h1 class="fw-500 text-center">Media</h1>
+                    </div>
+                    <div class="col-xs-12 p-0 dynamic-steps">
+                        <div class="row middle-xs my-3 px-2">
+                            <p class="mb-0"><span class="uppercase fw-500">Videos</span><span class="text-muted mx-3">(video link to .mp4)</span></p>
+                            <button class="mdc-icon-button material-icons primary-color add-step" type="button" data-template-name="videos">add_circle</button>
+                        </div>
+                        <div class="steps">
+                            <div class="step-section">
+                                <div class="row middle-xs">
+                                    <div class="col-xs-1 text-center fw-500">
+                                        <span class="num">1</span>
+                                    </div>
+                                    <div class="col-xs-10">
+                                        <div class="row">
+                                            <div class="col-xs-12 col-sm-5 p-2">
+                                                <div class="mdc-text-field mdc-text-field--outlined">
+                                                    @Html.TextBoxFor(m => m.FileName, new {@class = "mdc-text-field__input", id = "propertyVideo"})
+                                                    <div class="mdc-notched-outline">
+                                                        <div class="mdc-notched-outline__leading"></div>
+                                                        <div class="mdc-notched-outline__notch">
+                                                            @Html.LabelFor(m => m.FileName, new {@class = "mdc-floating-label", @for = "propertyVideo"})
                                                         </div>
-                                                        <div class="col-xs-12 col-sm-7 p-2">
-                                                            <div class="mdc-text-field mdc-text-field--outlined">
-                                                                <input class="mdc-text-field__input">
-                                                                <div class="mdc-notched-outline">
-                                                                    <div class="mdc-notched-outline__leading"></div>
-                                                                    <div class="mdc-notched-outline__notch">
-                                                                        <label class="mdc-floating-label">Link</label>
-                                                                    </div>
-                                                                    <div class="mdc-notched-outline__trailing"></div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
+                                                        <div class="mdc-notched-outline__trailing"></div>
                                                     </div>
                                                 </div>
-                                                <div class="col-xs-1 text-center">
-                                                    <button class="mdc-icon-button material-icons warn-color remove-step" type="button">cancel</button>
+                                            </div>
+                                            <div class="col-xs-12 col-sm-7 p-2">
+                                                <div class="mdc-text-field mdc-text-field--outlined">
+                                                    <input class="mdc-text-field__input">
+                                                    <div class="mdc-notched-outline">
+                                                        <div class="mdc-notched-outline__leading"></div>
+                                                        <div class="mdc-notched-outline__notch">
+                                                            <label class="mdc-floating-label">Link</label>
+                                                        </div>
+                                                        <div class="mdc-notched-outline__trailing"></div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="col-xs-1 text-center">
+                                        <button class="mdc-icon-button material-icons warn-color remove-step" type="button">cancel</button>
+                                    </div>
                                 </div>
-                            <script id="videos" type="text/template">
+                            </div>
+                        </div>
+                    </div>
+                    <script id="videos" type="text/template">
                                     <div class="step-section">
                                         <div class="row middle-xs">
                                             <div class="col-xs-1 text-center fw-500 number"></div>
@@ -711,98 +710,98 @@
                                         </div>
                                     </div>
                                 </script>
-                                <div class="col-xs-12 p-0 dynamic-steps">
-                                    <div class="row middle-xs my-3 px-2">
-                                        <p class="mb-0"><span class="uppercase fw-500">Plans</span></p>
-                                        <button class="mdc-icon-button material-icons primary-color add-step" type="button" data-template-name="plans">add_circle</button>
+                    <div class="col-xs-12 p-0 dynamic-steps">
+                        <div class="row middle-xs my-3 px-2">
+                            <p class="mb-0"><span class="uppercase fw-500">Plans</span></p>
+                            <button class="mdc-icon-button material-icons primary-color add-step" type="button" data-template-name="plans">add_circle</button>
+                        </div>
+                        <div class="steps">
+                            <div class="step-section">
+                                <div class="row middle-xs">
+                                    <div class="col-xs-1 text-center fw-500">
+                                        <span class="num">1</span>
                                     </div>
-                                    <div class="steps">
-                                        <div class="step-section">
-                                            <div class="row middle-xs">
-                                                <div class="col-xs-1 text-center fw-500">
-                                                    <span class="num">1</span>
-                                                </div>
-                                                <div class="col-xs-10">
-                                                    <div class="row">
-                                                        <div class="col-xs-12 col-sm-5 p-2">
-                                                            <div class="mdc-text-field mdc-text-field--outlined">
-                                                                @Html.TextBoxFor(m => m.Blueprint, new { @class = "mdc-text-field__input", type = "file", id = "firstBlueprint" })
-                                                                <div class="mdc-notched-outline">
-                                                                    <div class="mdc-notched-outline__leading"></div>
-                                                                    <div class="mdc-notched-outline__notch">
-                                                                        @Html.LabelFor(m => m.Blueprint, new { @class = "mdc-floating-label", @for = "firstBlueprint" })
-                                                                        <label class="mdc-floating-label">Name</label>
-                                                                    </div>
-                                                                    <div class="mdc-notched-outline__trailing"></div>
-                                                                </div>
-                                                            </div>
+                                    <div class="col-xs-10">
+                                        <div class="row">
+                                            <div class="col-xs-12 col-sm-5 p-2">
+                                                <div class="mdc-text-field mdc-text-field--outlined">
+                                                    @Html.TextBoxFor(m => m.Blueprint, new {@class = "mdc-text-field__input", type = "file", id = "firstBlueprint"})
+                                                    <div class="mdc-notched-outline">
+                                                        <div class="mdc-notched-outline__leading"></div>
+                                                        <div class="mdc-notched-outline__notch">
+                                                            @Html.LabelFor(m => m.Blueprint, new {@class = "mdc-floating-label", @for = "firstBlueprint"})
+                                                            <label class="mdc-floating-label">Name</label>
                                                         </div>
-                                                        <div class="col-xs-12 col-sm-7 p-2">
-                                                            <div class="mdc-text-field mdc-text-field--outlined">
-                                                                <input class="mdc-text-field__input">
-                                                                <div class="mdc-notched-outline">
-                                                                    <div class="mdc-notched-outline__leading"></div>
-                                                                    <div class="mdc-notched-outline__notch">
-                                                                        <label class="mdc-floating-label">Description</label>
-                                                                    </div>
-                                                                    <div class="mdc-notched-outline__trailing"></div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-xs-12 col-sm-4 p-2">
-                                                            <div class="mdc-text-field mdc-text-field--outlined">
-                                                                <input class="mdc-text-field__input">
-                                                                <div class="mdc-notched-outline">
-                                                                    <div class="mdc-notched-outline__leading"></div>
-                                                                    <div class="mdc-notched-outline__notch">
-                                                                        <label class="mdc-floating-label">Floor Size (m²)</label>
-                                                                    </div>
-                                                                    <div class="mdc-notched-outline__trailing"></div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-xs-12 col-sm-4 p-2">
-                                                            <div class="mdc-text-field mdc-text-field--outlined">
-                                                                <input class="mdc-text-field__input">
-                                                                <div class="mdc-notched-outline">
-                                                                    <div class="mdc-notched-outline__leading"></div>
-                                                                    <div class="mdc-notched-outline__notch">
-                                                                        <label class="mdc-floating-label">Bedrooms</label>
-                                                                    </div>
-                                                                    <div class="mdc-notched-outline__trailing"></div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-xs-12 col-sm-4 p-2">
-                                                            <div class="mdc-text-field mdc-text-field--outlined">
-                                                                <input class="mdc-text-field__input">
-                                                                <div class="mdc-notched-outline">
-                                                                    <div class="mdc-notched-outline__leading"></div>
-                                                                    <div class="mdc-notched-outline__notch">
-                                                                        <label class="mdc-floating-label">Bathrooms</label>
-                                                                    </div>
-                                                                    <div class="mdc-notched-outline__trailing"></div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-xs-12 mt-2">
-                                                            <label class="text-muted">Image</label>
-                                                            <div id="plan-image-1" class="dropzone needsclick">
-                                                                <div class="dz-message needsclick text-muted">
-                                                                    Drop file here or click to upload.
-                                                                </div>
-                                                            </div>
-                                                        </div>
+                                                        <div class="mdc-notched-outline__trailing"></div>
                                                     </div>
                                                 </div>
-                                                <div class="col-xs-1 text-center">
-                                                    <button class="mdc-icon-button material-icons warn-color remove-step" type="button">cancel</button>
+                                            </div>
+                                            <div class="col-xs-12 col-sm-7 p-2">
+                                                <div class="mdc-text-field mdc-text-field--outlined">
+                                                    <input class="mdc-text-field__input">
+                                                    <div class="mdc-notched-outline">
+                                                        <div class="mdc-notched-outline__leading"></div>
+                                                        <div class="mdc-notched-outline__notch">
+                                                            <label class="mdc-floating-label">Description</label>
+                                                        </div>
+                                                        <div class="mdc-notched-outline__trailing"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-12 col-sm-4 p-2">
+                                                <div class="mdc-text-field mdc-text-field--outlined">
+                                                    <input class="mdc-text-field__input">
+                                                    <div class="mdc-notched-outline">
+                                                        <div class="mdc-notched-outline__leading"></div>
+                                                        <div class="mdc-notched-outline__notch">
+                                                            <label class="mdc-floating-label">Floor Size (m²)</label>
+                                                        </div>
+                                                        <div class="mdc-notched-outline__trailing"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-12 col-sm-4 p-2">
+                                                <div class="mdc-text-field mdc-text-field--outlined">
+                                                    <input class="mdc-text-field__input">
+                                                    <div class="mdc-notched-outline">
+                                                        <div class="mdc-notched-outline__leading"></div>
+                                                        <div class="mdc-notched-outline__notch">
+                                                            <label class="mdc-floating-label">Bedrooms</label>
+                                                        </div>
+                                                        <div class="mdc-notched-outline__trailing"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-12 col-sm-4 p-2">
+                                                <div class="mdc-text-field mdc-text-field--outlined">
+                                                    <input class="mdc-text-field__input">
+                                                    <div class="mdc-notched-outline">
+                                                        <div class="mdc-notched-outline__leading"></div>
+                                                        <div class="mdc-notched-outline__notch">
+                                                            <label class="mdc-floating-label">Bathrooms</label>
+                                                        </div>
+                                                        <div class="mdc-notched-outline__trailing"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-12 mt-2">
+                                                <label class="text-muted">Image</label>
+                                                <div id="plan-image-1" class="dropzone needsclick">
+                                                    <div class="dz-message needsclick text-muted">
+                                                        Drop file here or click to upload.
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="col-xs-1 text-center">
+                                        <button class="mdc-icon-button material-icons warn-color remove-step" type="button">cancel</button>
+                                    </div>
                                 </div>
-                            <script id="plans" type="text/template">
+                            </div>
+                        </div>
+                    </div>
+                    <script id="plans" type="text/template">
                                     <div class="step-section">
                                         <div class="row middle-xs">
                                             <div class="col-xs-1 text-center fw-500 number"></div>
@@ -810,12 +809,12 @@
                                                 <div class="row">
                                                     <div class="col-xs-12 col-sm-5 p-2">
                                                         <div class="mdc-text-field mdc-text-field--outlined">
-                                                            @Html.TextBoxFor(m => m.Blueprint, new { @class = "mdc-text-field__input", type = "file", id = "firstBlueprint" })
+                                                            @Html.TextBoxFor(m => m.Blueprint, new {@class = "mdc-text-field__input", type = "file", id = "firstBlueprint"})
                                                             @*<input class="mdc-text-field__input">*@
                                                             <div class="mdc-notched-outline">
                                                                 <div class="mdc-notched-outline__leading"></div>
                                                                 <div class="mdc-notched-outline__notch">
-                                                                    @Html.LabelFor(m => m.Blueprint, new { @class = "mdc-floating-label", @for = "firstBlueprint" })
+                                                                    @Html.LabelFor(m => m.Blueprint, new {@class = "mdc-floating-label", @for = "firstBlueprint"})
                                                                     @*<label class="mdc-floating-label">Name</label>*@
                                                                 </div>
                                                                 <div class="mdc-notched-outline__trailing"></div>
@@ -886,53 +885,53 @@
                                         </div>
                                     </div>
                                 </script>
-                                <div class="col-xs-12 p-0 dynamic-steps">
-                                    <div class="row middle-xs my-3 px-2">
-                                        <p class="mb-0"><span class="uppercase fw-500">Additional features</span></p>
-                                        <button class="mdc-icon-button material-icons primary-color add-step" type="button" data-template-name="features">add_circle</button>
+                    <div class="col-xs-12 p-0 dynamic-steps">
+                        <div class="row middle-xs my-3 px-2">
+                            <p class="mb-0"><span class="uppercase fw-500">Additional features</span></p>
+                            <button class="mdc-icon-button material-icons primary-color add-step" type="button" data-template-name="features">add_circle</button>
+                        </div>
+                        <div class="steps">
+                            <div class="step-section">
+                                <div class="row middle-xs">
+                                    <div class="col-xs-1 text-center fw-500">
+                                        <span class="num">1</span>
                                     </div>
-                                    <div class="steps">
-                                        <div class="step-section">
-                                            <div class="row middle-xs">
-                                                <div class="col-xs-1 text-center fw-500">
-                                                    <span class="num">1</span>
-                                                </div>
-                                                <div class="col-xs-10">
-                                                    <div class="row">
-                                                        <div class="col-xs-12 col-sm-5 p-2">
-                                                            <div class="mdc-text-field mdc-text-field--outlined">
-                                                                <input class="mdc-text-field__input">
-                                                                <div class="mdc-notched-outline">
-                                                                    <div class="mdc-notched-outline__leading"></div>
-                                                                    <div class="mdc-notched-outline__notch">
-                                                                        <label class="mdc-floating-label">Name</label>
-                                                                    </div>
-                                                                    <div class="mdc-notched-outline__trailing"></div>
-                                                                </div>
-                                                            </div>
+                                    <div class="col-xs-10">
+                                        <div class="row">
+                                            <div class="col-xs-12 col-sm-5 p-2">
+                                                <div class="mdc-text-field mdc-text-field--outlined">
+                                                    <input class="mdc-text-field__input">
+                                                    <div class="mdc-notched-outline">
+                                                        <div class="mdc-notched-outline__leading"></div>
+                                                        <div class="mdc-notched-outline__notch">
+                                                            <label class="mdc-floating-label">Name</label>
                                                         </div>
-                                                        <div class="col-xs-12 col-sm-7 p-2">
-                                                            <div class="mdc-text-field mdc-text-field--outlined">
-                                                                <input class="mdc-text-field__input">
-                                                                <div class="mdc-notched-outline">
-                                                                    <div class="mdc-notched-outline__leading"></div>
-                                                                    <div class="mdc-notched-outline__notch">
-                                                                        <label class="mdc-floating-label">Value</label>
-                                                                    </div>
-                                                                    <div class="mdc-notched-outline__trailing"></div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
+                                                        <div class="mdc-notched-outline__trailing"></div>
                                                     </div>
                                                 </div>
-                                                <div class="col-xs-1 text-center">
-                                                    <button class="mdc-icon-button material-icons warn-color remove-step" type="button">cancel</button>
+                                            </div>
+                                            <div class="col-xs-12 col-sm-7 p-2">
+                                                <div class="mdc-text-field mdc-text-field--outlined">
+                                                    <input class="mdc-text-field__input">
+                                                    <div class="mdc-notched-outline">
+                                                        <div class="mdc-notched-outline__leading"></div>
+                                                        <div class="mdc-notched-outline__notch">
+                                                            <label class="mdc-floating-label">Value</label>
+                                                        </div>
+                                                        <div class="mdc-notched-outline__trailing"></div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="col-xs-1 text-center">
+                                        <button class="mdc-icon-button material-icons warn-color remove-step" type="button">cancel</button>
+                                    </div>
                                 </div>
-                                <script id="features" type="text/template">
+                            </div>
+                        </div>
+                    </div>
+                    <script id="features" type="text/template">
                                     <div class="step-section">
                                         <div class="row middle-xs">
                                             <div class="col-xs-1 text-center fw-500 number"></div>
@@ -970,49 +969,49 @@
                                         </div>
                                     </div>
                                 </script>
-                                <div class="col-xs-12 py-3 row middle-xs">
-                                    <div class="mdc-switch">
-                                        <div class="mdc-switch__track"></div>
-                                        <div class="mdc-switch__thumb-underlay">
-                                            <div class="mdc-switch__thumb">
-                                                <input type="checkbox" id="featured" class="mdc-switch__native-control">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <label for="featured" class="mx-2">Featured</label>
-                                </div>
-                                <div class="col-xs-12 p-2 mt-3 row between-xs">
-                                    <button class="mdc-button mdc-button--raised prev-tab" type="button">
-                                        <span class="mdc-button__ripple"></span>
-                                        <i class="material-icons mdc-button__icon">navigate_before</i>
-                                        <span class="mdc-button__label">Back</span>
-                                    </button>
-                                    <button class="mdc-button mdc-button--raised next-tab" type="button">
-                                        <span class="mdc-button__ripple"></span>
-                                        <span class="mdc-button__label">Submit</span>
-                                        <i class="material-icons mdc-button__icon">navigate_next</i>
-                                    </button>
+                    <div class="col-xs-12 py-3 row middle-xs">
+                        <div class="mdc-switch">
+                            <div class="mdc-switch__track"></div>
+                            <div class="mdc-switch__thumb-underlay">
+                                <div class="mdc-switch__thumb">
+                                    <input type="checkbox" id="featured" class="mdc-switch__native-control">
                                 </div>
                             </div>
-                            <div class="tab-content">
-                                <div class="column center-xs middle-xs pt-5 text-center">
-                                    <button class="mdc-fab primary">
-                                        <span class="mdc-fab__ripple"></span>
-                                        <span class="mdc-fab__icon material-icons mat-icon-lg">check</span>
-                                    </button>
-                                    <h2 class="mt-3 uppercase">Congratulation!</h2>
-                                    <h2 class="my-3">Your property <span class="primary-color">@Html.LabelFor(m => m.Title)</span> has been submitted</h2>
-                                    <p class="text-muted fw-500">Thank you for submitting your property. The property has been sent for review and approval. Once your property has been approved, it will be made public. Should there be an issue or additional information is required, we will make contact with you to rectify the issue at hand.</p>
-                                </div>
-                                <div class="row center-xs middle-xs py-3">
-                                    <button class="mdc-button mdc-button--raised bg-accent" type="button">
-                                        <span class="mdc-button__ripple"></span>
-                                        <span class="mdc-button__label">Return to submit new property</span>
-                                    </button>
-                                </div>
-                            </div>
-                        }
+                        </div>
+                        <label for="featured" class="mx-2">Featured</label>
                     </div>
+                    <div class="col-xs-12 p-2 mt-3 row between-xs">
+                        <button class="mdc-button mdc-button--raised prev-tab" type="button">
+                            <span class="mdc-button__ripple"></span>
+                            <i class="material-icons mdc-button__icon">navigate_before</i>
+                            <span class="mdc-button__label">Back</span>
+                        </button>
+                        <button class="mdc-button mdc-button--raised next-tab" type="button">
+                            <span class="mdc-button__ripple"></span>
+                            <span class="mdc-button__label">Submit</span>
+                            <i class="material-icons mdc-button__icon">navigate_next</i>
+                        </button>
+                    </div>
+                    </div>
+                    <div class="tab-content">
+                        <div class="column center-xs middle-xs pt-5 text-center">
+                            <button class="mdc-fab primary">
+                                <span class="mdc-fab__ripple"></span>
+                                <span class="mdc-fab__icon material-icons mat-icon-lg">check</span>
+                            </button>
+                            <h2 class="mt-3 uppercase">Congratulation!</h2>
+                            <h2 class="my-3">Your property <span class="primary-color">@Html.LabelFor(m => m.Title)</span> has been submitted</h2>
+                            <p class="text-muted fw-500">Thank you for submitting your property. The property has been sent for review and approval. Once your property has been approved, it will be made public. Should there be an issue or additional information is required, we will make contact with you to rectify the issue at hand.</p>
+                        </div>
+                        <div class="row center-xs middle-xs py-3">
+                            <button class="mdc-button mdc-button--raised bg-accent" type="button">
+                                <span class="mdc-button__ripple"></span>
+                                <span class="mdc-button__label">Return to submit new property</span>
+                            </button>
+                        </div>
+                    </div>
+                }
+                </div>
                     <div id="dropzone-preview-template" class="d-none plan-image-template">
                         <div class="dz-preview dz-file-preview">
                             <div class="dz-image"><img src="~/content/img/images/others/transparent-bg.png" data-dz-thumbnail="" alt="prop-image"></div>
