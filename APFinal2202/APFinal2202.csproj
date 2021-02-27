@@ -213,6 +213,14 @@
     <Compile Include="Migrations\202102260007423_AddedAditionalColumnToSomeTables.designer.cs">
       <DependentUpon>202102260007423_AddedAditionalColumnToSomeTables.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202102271022001_SomethingIsMissingInMultimedia.cs" />
+    <Compile Include="Migrations\202102271022001_SomethingIsMissingInMultimedia.designer.cs">
+      <DependentUpon>202102271022001_SomethingIsMissingInMultimedia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202102271044382_RemoveTheLinkPropertyFromMultimedia.cs" />
+    <Compile Include="Migrations\202102271044382_RemoveTheLinkPropertyFromMultimedia.designer.cs">
+      <DependentUpon>202102271044382_RemoveTheLinkPropertyFromMultimedia.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Address.cs" />
     <Compile Include="Models\Agency.cs" />
@@ -686,6 +694,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202102260007423_AddedAditionalColumnToSomeTables.resx">
       <DependentUpon>202102260007423_AddedAditionalColumnToSomeTables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202102271022001_SomethingIsMissingInMultimedia.resx">
+      <DependentUpon>202102271022001_SomethingIsMissingInMultimedia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202102271044382_RemoveTheLinkPropertyFromMultimedia.resx">
+      <DependentUpon>202102271044382_RemoveTheLinkPropertyFromMultimedia.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

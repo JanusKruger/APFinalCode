@@ -22,63 +22,38 @@ namespace APFinal2202.Controllers
 
             return View();
         }
+
         public ActionResult AuctionRoom()
         {
             ViewBag.Message = "Auction room.";
 
             return View();
         }
+
         public ActionResult Properties()
         {
             ViewBag.Message = "Your Properties Page .";
 
             return View();
         }
+
         public ActionResult PropertyDetailPage()
         {
             ViewBag.Message = "Detail Page.";
 
             return View();
         }
+
         public ActionResult Terms()
         {
             ViewBag.Message = "Terms.";
 
             return View();
         }
-        public ActionResult BuyersGuide()
-        {
-            ViewBag.Message = "BuyersGuide.";
 
-            return View();
-        }
         public ActionResult Faq()
         {
             ViewBag.Message = "Questions.";
-
-            return View();
-        }
-        public ActionResult SubmitProperty()
-        {
-            ViewBag.Message = "Submit Property.";
-
-            return View();
-        }
-        public ActionResult SellersGuide()
-        {
-            ViewBag.Message = "Seller Info.";
-
-            return View();
-        }
-        public ActionResult Register()
-        {
-            ViewBag.Message = "Register.";
-
-            return View();
-        }
-        public ActionResult Login()
-        {
-            ViewBag.Message = "Login.";
 
             return View();
         }

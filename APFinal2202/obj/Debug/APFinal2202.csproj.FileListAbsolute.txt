@@ -384,3 +384,5 @@ C:\Users\GabyM\Documents\GitHub\Upwork\Janus Kruger\APFinalCode\APFinal2202\obj\
 C:\Users\GabyM\Documents\GitHub\Upwork\Janus Kruger\APFinalCode\APFinal2202\obj\Debug\APFinal2202.Migrations.ChangeTheUserAndUserRegistrationStructure.resources
 C:\Users\GabyM\Documents\GitHub\Upwork\Janus Kruger\APFinalCode\APFinal2202\obj\Debug\APFinal2202.csprojAssemblyReference.cache
 C:\Users\GabyM\Documents\GitHub\Upwork\Janus Kruger\APFinalCode\APFinal2202\obj\Debug\APFinal2202.Migrations.AddedAditionalColumnToSomeTables.resources
+C:\Users\GabyM\Documents\GitHub\Upwork\Janus Kruger\APFinalCode\APFinal2202\obj\Debug\APFinal2202.Migrations.SomethingIsMissingInMultimedia.resources
+C:\Users\GabyM\Documents\GitHub\Upwork\Janus Kruger\APFinalCode\APFinal2202\obj\Debug\APFinal2202.Migrations.RemoveTheLinkPropertyFromMultimedia.resources

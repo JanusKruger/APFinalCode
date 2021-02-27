@@ -8,7 +8,6 @@ using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Security.Policy;
 using System.Threading.Tasks;
 using System.Web.Mvc;
 
@@ -69,7 +68,6 @@ namespace APFinal2202.Controllers
                     {
                         FileName = httpPostedFileBase.FileName,
                         Content = httpPostedFileBase.SetContent(),
-                        Link = new Url(model.Link),
                         Type = Enum.GetName(typeof(MultimediaType), MultimediaType.PropertyPhoto)
                     };
 
@@ -78,14 +76,13 @@ namespace APFinal2202.Controllers
                 }
             }
 
-            if (model.Blueprint[0] != null)
+            if (model.Blueprint != null)
             {
-                foreach (var httpPostedFileBase in model.Blueprint)
                 {
                     var blueprint = new Multimedia
                     {
-                        FileName = httpPostedFileBase.FileName,
-                        Content = httpPostedFileBase.SetContent(),
+                        FileName = model.Blueprint.FileName,
+                        Content = model.Blueprint.SetContent(),
                         Type = Enum.GetName(typeof(MultimediaType), MultimediaType.BlueprintPhoto)
                     };
 
@@ -93,20 +90,6 @@ namespace APFinal2202.Controllers
                     property.MultimediaIds += $"{blueprint.Id}";
                 }
             }
-
-            if (model.Link != null)
-            {
-                var video = new Multimedia
-                {
-                    FileName = model.FileName,
-                    Type = Enum.GetName(typeof(MultimediaType), MultimediaType.PropertyVideo),
-                    Link = new Url(model.Link)
-                };
-
-                context.MultiMedias.Add(video);
-                property.MultimediaIds += $"{video.Id}";
-            }
-
 
             context.Addresses.Add(address);
             context.Properties.Add(property);

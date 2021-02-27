@@ -630,7 +630,7 @@
                                 <div class="col-xs-12 p-0 dynamic-steps">
                                     <div class="row middle-xs my-3 px-2">
                                         <p class="mb-0"><span class="uppercase fw-500">Videos</span><span class="text-muted mx-3">(video link to .mp4)</span></p>
-                                        @*<button class="mdc-icon-button material-icons primary-color add-step" type="button" data-template-name="videos">add_circle</button>*@
+                                        <button class="mdc-icon-button material-icons primary-color add-step" type="button" data-template-name="videos">add_circle</button>
                                     </div>
                                     <div class="steps">
                                         <div class="step-section">
@@ -654,13 +654,11 @@
                                                         </div>
                                                         <div class="col-xs-12 col-sm-7 p-2">
                                                             <div class="mdc-text-field mdc-text-field--outlined">
-                                                                @Html.TextBoxFor(m => m.Link, new { @class = "mdc-text-field__input", id = "propertyLink" })
-                                                                @*<input class="mdc-text-field__input">*@
+                                                                <input class="mdc-text-field__input">
                                                                 <div class="mdc-notched-outline">
                                                                     <div class="mdc-notched-outline__leading"></div>
                                                                     <div class="mdc-notched-outline__notch">
-                                                                        @Html.LabelFor(m => m.Link, new { @class = "mdc-floating-label", @for = "propertyLink" })
-                                                                        @*<label class="mdc-floating-label">Link</label>*@
+                                                                        <label class="mdc-floating-label">Link</label>
                                                                     </div>
                                                                     <div class="mdc-notched-outline__trailing"></div>
                                                                 </div>
@@ -669,7 +667,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-xs-1 text-center">
-                                                    @*<button class="mdc-icon-button material-icons warn-color remove-step" type="button">cancel</button>*@
+                                                    <button class="mdc-icon-button material-icons warn-color remove-step" type="button">cancel</button>
                                                 </div>
                                             </div>
                                         </div>
@@ -683,13 +681,11 @@
                                                 <div class="row">
                                                     <div class="col-xs-12 col-sm-5 p-2">
                                                         <div class="mdc-text-field mdc-text-field--outlined">
-                                                            @Html.TextBoxFor(m => m.FileName, new { @class = "mdc-text-field__input", id = "propertyVideo" })
-                                                            @*<input class="mdc-text-field__input">*@
+                                                            <input class="mdc-text-field__input">
                                                             <div class="mdc-notched-outline">
                                                                 <div class="mdc-notched-outline__leading"></div>
                                                                 <div class="mdc-notched-outline__notch">
-                                                                    @Html.LabelFor(m => m.FileName, new { @class = "mdc-floating-label", @for = "propertyVideo" })
-                                                                    @*<label class="mdc-floating-label">Name</label>*@
+                                                                    <label class="mdc-floating-label">Name</label>
                                                                 </div>
                                                                 <div class="mdc-notched-outline__trailing"></div>
                                                             </div>
@@ -697,13 +693,11 @@
                                                     </div>
                                                     <div class="col-xs-12 col-sm-7 p-2">
                                                         <div class="mdc-text-field mdc-text-field--outlined">
-                                                            @Html.TextBoxFor(m => m.Link, new { @class = "mdc-text-field__input", id = "propertyLink" })
-                                                            @*<input class="mdc-text-field__input">*@
+                                                            <input class="mdc-text-field__input">
                                                             <div class="mdc-notched-outline">
                                                                 <div class="mdc-notched-outline__leading"></div>
                                                                 <div class="mdc-notched-outline__notch">
-                                                                    @Html.LabelFor(m => m.Link, new { @class = "mdc-floating-label", @for = "propertyLink" })
-                                                                    @*<label class="mdc-floating-label">Link</label>*@
+                                                                    <label class="mdc-floating-label">Link</label>
                                                                 </div>
                                                                 <div class="mdc-notched-outline__trailing"></div>
                                                             </div>
@@ -732,11 +726,11 @@
                                                     <div class="row">
                                                         <div class="col-xs-12 col-sm-5 p-2">
                                                             <div class="mdc-text-field mdc-text-field--outlined">
-                                                                @Html.TextBoxFor(m => m.Blueprint[0], new { @class = "mdc-text-field__input", type = "file", id = "firstBlueprint" })
+                                                                @Html.TextBoxFor(m => m.Blueprint, new { @class = "mdc-text-field__input", type = "file", id = "firstBlueprint" })
                                                                 <div class="mdc-notched-outline">
                                                                     <div class="mdc-notched-outline__leading"></div>
                                                                     <div class="mdc-notched-outline__notch">
-                                                                        @Html.LabelFor(m => m.Blueprint[0], new { @class = "mdc-floating-label", @for = "firstBlueprint" })
+                                                                        @Html.LabelFor(m => m.Blueprint, new { @class = "mdc-floating-label", @for = "firstBlueprint" })
                                                                         <label class="mdc-floating-label">Name</label>
                                                                     </div>
                                                                     <div class="mdc-notched-outline__trailing"></div>
@@ -816,12 +810,12 @@
                                                 <div class="row">
                                                     <div class="col-xs-12 col-sm-5 p-2">
                                                         <div class="mdc-text-field mdc-text-field--outlined">
-                                                            @Html.TextBoxFor(m => m.Blueprint[0], new { @class = "mdc-text-field__input", type = "file", id = "firstBlueprint" })
+                                                            @Html.TextBoxFor(m => m.Blueprint, new { @class = "mdc-text-field__input", type = "file", id = "firstBlueprint" })
                                                             @*<input class="mdc-text-field__input">*@
                                                             <div class="mdc-notched-outline">
                                                                 <div class="mdc-notched-outline__leading"></div>
                                                                 <div class="mdc-notched-outline__notch">
-                                                                    @Html.LabelFor(m => m.Blueprint[0], new { @class = "mdc-floating-label", @for = "firstBlueprint" })
+                                                                    @Html.LabelFor(m => m.Blueprint, new { @class = "mdc-floating-label", @for = "firstBlueprint" })
                                                                     @*<label class="mdc-floating-label">Name</label>*@
                                                                 </div>
                                                                 <div class="mdc-notched-outline__trailing"></div>
